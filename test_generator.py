@@ -29,11 +29,15 @@ class TestWarpGenerator(unittest.TestCase):
 
     def test_node_pool_regions_and_counts(self):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
-        self.assertEqual(len(nodes), 36, "Total nodes should be 36 (9 regions * 4 nodes)")
+        # 1 info node + 36 region nodes = 37 total
+        self.assertEqual(len(nodes), 37, "Total nodes should be 37 (1 info node + 9 regions * 4 nodes)")
+        self.assertTrue(nodes[0]['name'].startswith("📊 剩余流量"))
         
         region_counts = {}
         for n in nodes:
             r = n['region']
+            if r == 'INFO':
+                continue
             region_counts[r] = region_counts.get(r, 0) + 1
             self.assertEqual(len(n['reserved']), 3, "Reserved client_id must have 3 integers")
             self.assertEqual(n['ip'], '172.16.0.2')
@@ -54,7 +58,7 @@ class TestWarpGenerator(unittest.TestCase):
         
         # Parse with PyYAML to verify syntax
         data = yaml.safe_load(yaml_content)
-        self.assertEqual(len(data['proxies']), 36)
+        self.assertEqual(len(data['proxies']), 37)
         group_names = [g['name'] for g in data['proxy-groups']]
         self.assertIn("🚀 节点选择", group_names)
         self.assertIn("🇺🇸 美国", group_names)
@@ -66,7 +70,7 @@ class TestWarpGenerator(unittest.TestCase):
         sb_json = generate_singbox_json(nodes)
         data = json.loads(sb_json)
         self.assertIn("outbounds", data)
-        self.assertEqual(len(data['outbounds']), 36)
+        self.assertEqual(len(data['outbounds']), 37)
         self.assertEqual(data['outbounds'][0]['type'], 'wireguard')
 
     def test_sub_txt_base64(self):
@@ -74,7 +78,7 @@ class TestWarpGenerator(unittest.TestCase):
         b64 = generate_sub_txt(nodes)
         decoded = base64.b64decode(b64).decode('utf-8')
         uris = decoded.splitlines()
-        self.assertEqual(len(uris), 36)
+        self.assertEqual(len(uris), 37)
         self.assertTrue(uris[0].startswith("wireguard://"))
         self.assertIn("reserved=", uris[0])
 

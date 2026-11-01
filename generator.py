@@ -169,6 +169,21 @@ def build_node_pool(account, probe_list):
     """Combine fallback region endpoints with probe list to produce 4 nodes per region."""
     nodes = []
     
+    # 0. Add Info / Quota Node at the top
+    quota_desc = "WARP+ 无限 (1.84 PB)" if account.get('warp_plus') else "WARP 免费版"
+    nodes.append({
+        'name': f"📊 剩余流量 | {quota_desc}",
+        'region': 'INFO',
+        'server': '127.0.0.1',
+        'port': 65535,
+        'ip': account['v4'],
+        'ipv6': account['v6'],
+        'private_key': account['private_key'],
+        'public_key': account['public_key'],
+        'reserved': account['reserved'],
+        'mtu': 1280
+    })
+    
     # We allocate probe endpoints and default endpoints to each region
     for code, meta in REGIONS.items():
         defaults = DEFAULT_ENDPOINTS.get(code, [])
@@ -223,12 +238,12 @@ def generate_clash_yaml(nodes):
       - 1.0.0.1
     udp: true""")
 
-    all_names = [f'"{n["name"]}"' for n in nodes]
+    all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
     # Group names per region
     region_groups = []
     for code, meta in REGIONS.items():
-        reg_names = [f'"{n["name"]}"' for n in nodes if n['region'] == code]
+        reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
         region_groups.append(f"""  - name: "{meta['flag']} {meta['name']}"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
