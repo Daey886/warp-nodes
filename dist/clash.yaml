@@ -1,6 +1,6 @@
 # ==========================================
 # WARP-Nodes 8大国自动优选订阅 (Mihomo / Clash Meta)
-# Generated: 2026-11-01 18:55:07 UTC
+# Generated: 2026-11-01 19:01:41 UTC
 # ==========================================
 
 port: 7890
@@ -28,480 +28,480 @@ dns:
     - https://dns.google/dns-query
 
 proxies:
-  - name: "🇭🇰 香港 01 | WARP"
+  - name: "🇭🇰 香港 01 | WARP+"
     type: wireguard
     server: "162.159.192.19"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇭🇰 香港 02 | WARP"
+  - name: "🇭🇰 香港 02 | WARP+"
     type: wireguard
     server: "162.159.195.165"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇭🇰 香港 03 | WARP"
+  - name: "🇭🇰 香港 03 | WARP+"
     type: wireguard
     server: "162.159.192.19"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇭🇰 香港 04 | WARP"
+  - name: "🇭🇰 香港 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c013"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇯🇵 日本 01 | WARP"
+  - name: "🇯🇵 日本 01 | WARP+"
     type: wireguard
     server: "162.159.192.163"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇯🇵 日本 02 | WARP"
+  - name: "🇯🇵 日本 02 | WARP+"
     type: wireguard
     server: "162.159.195.179"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇯🇵 日本 03 | WARP"
+  - name: "🇯🇵 日本 03 | WARP+"
     type: wireguard
     server: "162.159.192.163"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇯🇵 日本 04 | WARP"
+  - name: "🇯🇵 日本 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c0a3"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇸🇬 新加坡 01 | WARP"
+  - name: "🇸🇬 新加坡 01 | WARP+"
     type: wireguard
     server: "162.159.192.44"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇸🇬 新加坡 02 | WARP"
+  - name: "🇸🇬 新加坡 02 | WARP+"
     type: wireguard
     server: "162.159.195.208"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇸🇬 新加坡 03 | WARP"
+  - name: "🇸🇬 新加坡 03 | WARP+"
     type: wireguard
     server: "162.159.192.44"
     port: 854
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇸🇬 新加坡 04 | WARP"
+  - name: "🇸🇬 新加坡 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c02c"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇺🇸 美国 01 | WARP"
+  - name: "🇺🇸 美国 01 | WARP+"
     type: wireguard
     server: "162.159.192.5"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇺🇸 美国 02 | WARP"
+  - name: "🇺🇸 美国 02 | WARP+"
     type: wireguard
     server: "162.159.193.10"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇺🇸 美国 03 | WARP"
+  - name: "🇺🇸 美国 03 | WARP+"
     type: wireguard
     server: "162.159.192.5"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇺🇸 美国 04 | WARP"
+  - name: "🇺🇸 美国 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c005"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇬🇧 英国 01 | WARP"
+  - name: "🇬🇧 英国 01 | WARP+"
     type: wireguard
     server: "162.159.192.36"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇬🇧 英国 02 | WARP"
+  - name: "🇬🇧 英国 02 | WARP+"
     type: wireguard
     server: "162.159.195.246"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇬🇧 英国 03 | WARP"
+  - name: "🇬🇧 英国 03 | WARP+"
     type: wireguard
     server: "162.159.192.36"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇬🇧 英国 04 | WARP"
+  - name: "🇬🇧 英国 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c024"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇩🇪 德国 01 | WARP"
+  - name: "🇩🇪 德国 01 | WARP+"
     type: wireguard
     server: "162.159.192.82"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇩🇪 德国 02 | WARP"
+  - name: "🇩🇪 德国 02 | WARP+"
     type: wireguard
     server: "162.159.195.189"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇩🇪 德国 03 | WARP"
+  - name: "🇩🇪 德国 03 | WARP+"
     type: wireguard
     server: "162.159.192.82"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇩🇪 德国 04 | WARP"
+  - name: "🇩🇪 德国 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c052"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇰🇷 韩国 01 | WARP"
+  - name: "🇰🇷 韩国 01 | WARP+"
     type: wireguard
     server: "162.159.192.53"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇰🇷 韩国 02 | WARP"
+  - name: "🇰🇷 韩国 02 | WARP+"
     type: wireguard
     server: "162.159.193.1"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇰🇷 韩国 03 | WARP"
+  - name: "🇰🇷 韩国 03 | WARP+"
     type: wireguard
     server: "162.159.192.53"
     port: 854
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇰🇷 韩国 04 | WARP"
+  - name: "🇰🇷 韩国 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c035"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇨🇦 加拿大 01 | WARP"
+  - name: "🇨🇦 加拿大 01 | WARP+"
     type: wireguard
     server: "162.159.192.220"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇨🇦 加拿大 02 | WARP"
+  - name: "🇨🇦 加拿大 02 | WARP+"
     type: wireguard
     server: "162.159.195.1"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇨🇦 加拿大 03 | WARP"
+  - name: "🇨🇦 加拿大 03 | WARP+"
     type: wireguard
     server: "162.159.192.220"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
       - 1.0.0.1
     udp: true
-  - name: "🇨🇦 加拿大 04 | WARP"
+  - name: "🇨🇦 加拿大 04 | WARP+"
     type: wireguard
     server: "2606:4700:d0::a29f:c0dc"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8952:8ca6:26ec:1171:8f53"
-    private-key: "qAkiZv112bUu8Uq9Agwc0Rk3o24jlU4YKlYabdh5dHM="
+    ipv6: "2606:4700:110:881a:6463:936d:aa85:1047"
+    private-key: "8FqlMmvANTy9bSYlaxoG1SRSd5JtrXqvI3Eed09Wx2E="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [54, 177, 14]
+    reserved: [201, 87, 64]
     mtu: 1280
     remote-dns-resolve: true
     dns:
@@ -530,38 +530,38 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇭🇰 香港 01 | WARP"
-      - "🇭🇰 香港 02 | WARP"
-      - "🇭🇰 香港 03 | WARP"
-      - "🇭🇰 香港 04 | WARP"
-      - "🇯🇵 日本 01 | WARP"
-      - "🇯🇵 日本 02 | WARP"
-      - "🇯🇵 日本 03 | WARP"
-      - "🇯🇵 日本 04 | WARP"
-      - "🇸🇬 新加坡 01 | WARP"
-      - "🇸🇬 新加坡 02 | WARP"
-      - "🇸🇬 新加坡 03 | WARP"
-      - "🇸🇬 新加坡 04 | WARP"
-      - "🇺🇸 美国 01 | WARP"
-      - "🇺🇸 美国 02 | WARP"
-      - "🇺🇸 美国 03 | WARP"
-      - "🇺🇸 美国 04 | WARP"
-      - "🇬🇧 英国 01 | WARP"
-      - "🇬🇧 英国 02 | WARP"
-      - "🇬🇧 英国 03 | WARP"
-      - "🇬🇧 英国 04 | WARP"
-      - "🇩🇪 德国 01 | WARP"
-      - "🇩🇪 德国 02 | WARP"
-      - "🇩🇪 德国 03 | WARP"
-      - "🇩🇪 德国 04 | WARP"
-      - "🇰🇷 韩国 01 | WARP"
-      - "🇰🇷 韩国 02 | WARP"
-      - "🇰🇷 韩国 03 | WARP"
-      - "🇰🇷 韩国 04 | WARP"
-      - "🇨🇦 加拿大 01 | WARP"
-      - "🇨🇦 加拿大 02 | WARP"
-      - "🇨🇦 加拿大 03 | WARP"
-      - "🇨🇦 加拿大 04 | WARP"
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
 
   - name: "🤖 海外AI"
     type: select
@@ -587,18 +587,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇭🇰 香港 01 | WARP"
-      - "🇭🇰 香港 02 | WARP"
-      - "🇭🇰 香港 03 | WARP"
-      - "🇭🇰 香港 04 | WARP"
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
 
   - name: "🇭🇰 香港 手动选择"
     type: select
     proxies:
-      - "🇭🇰 香港 01 | WARP"
-      - "🇭🇰 香港 02 | WARP"
-      - "🇭🇰 香港 03 | WARP"
-      - "🇭🇰 香港 04 | WARP"
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
   - name: "🇯🇵 日本"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -614,18 +614,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇯🇵 日本 01 | WARP"
-      - "🇯🇵 日本 02 | WARP"
-      - "🇯🇵 日本 03 | WARP"
-      - "🇯🇵 日本 04 | WARP"
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
 
   - name: "🇯🇵 日本 手动选择"
     type: select
     proxies:
-      - "🇯🇵 日本 01 | WARP"
-      - "🇯🇵 日本 02 | WARP"
-      - "🇯🇵 日本 03 | WARP"
-      - "🇯🇵 日本 04 | WARP"
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
   - name: "🇸🇬 新加坡"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -641,18 +641,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇸🇬 新加坡 01 | WARP"
-      - "🇸🇬 新加坡 02 | WARP"
-      - "🇸🇬 新加坡 03 | WARP"
-      - "🇸🇬 新加坡 04 | WARP"
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
 
   - name: "🇸🇬 新加坡 手动选择"
     type: select
     proxies:
-      - "🇸🇬 新加坡 01 | WARP"
-      - "🇸🇬 新加坡 02 | WARP"
-      - "🇸🇬 新加坡 03 | WARP"
-      - "🇸🇬 新加坡 04 | WARP"
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
   - name: "🇺🇸 美国"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -668,18 +668,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇺🇸 美国 01 | WARP"
-      - "🇺🇸 美国 02 | WARP"
-      - "🇺🇸 美国 03 | WARP"
-      - "🇺🇸 美国 04 | WARP"
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
 
   - name: "🇺🇸 美国 手动选择"
     type: select
     proxies:
-      - "🇺🇸 美国 01 | WARP"
-      - "🇺🇸 美国 02 | WARP"
-      - "🇺🇸 美国 03 | WARP"
-      - "🇺🇸 美国 04 | WARP"
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
   - name: "🇬🇧 英国"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -695,18 +695,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇬🇧 英国 01 | WARP"
-      - "🇬🇧 英国 02 | WARP"
-      - "🇬🇧 英国 03 | WARP"
-      - "🇬🇧 英国 04 | WARP"
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
 
   - name: "🇬🇧 英国 手动选择"
     type: select
     proxies:
-      - "🇬🇧 英国 01 | WARP"
-      - "🇬🇧 英国 02 | WARP"
-      - "🇬🇧 英国 03 | WARP"
-      - "🇬🇧 英国 04 | WARP"
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
   - name: "🇩🇪 德国"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -722,18 +722,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇩🇪 德国 01 | WARP"
-      - "🇩🇪 德国 02 | WARP"
-      - "🇩🇪 德国 03 | WARP"
-      - "🇩🇪 德国 04 | WARP"
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
 
   - name: "🇩🇪 德国 手动选择"
     type: select
     proxies:
-      - "🇩🇪 德国 01 | WARP"
-      - "🇩🇪 德国 02 | WARP"
-      - "🇩🇪 德国 03 | WARP"
-      - "🇩🇪 德国 04 | WARP"
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
   - name: "🇰🇷 韩国"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -749,18 +749,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇰🇷 韩国 01 | WARP"
-      - "🇰🇷 韩国 02 | WARP"
-      - "🇰🇷 韩国 03 | WARP"
-      - "🇰🇷 韩国 04 | WARP"
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
 
   - name: "🇰🇷 韩国 手动选择"
     type: select
     proxies:
-      - "🇰🇷 韩国 01 | WARP"
-      - "🇰🇷 韩国 02 | WARP"
-      - "🇰🇷 韩国 03 | WARP"
-      - "🇰🇷 韩国 04 | WARP"
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
   - name: "🇨🇦 加拿大"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
@@ -776,18 +776,18 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "🇨🇦 加拿大 01 | WARP"
-      - "🇨🇦 加拿大 02 | WARP"
-      - "🇨🇦 加拿大 03 | WARP"
-      - "🇨🇦 加拿大 04 | WARP"
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
 
   - name: "🇨🇦 加拿大 手动选择"
     type: select
     proxies:
-      - "🇨🇦 加拿大 01 | WARP"
-      - "🇨🇦 加拿大 02 | WARP"
-      - "🇨🇦 加拿大 03 | WARP"
-      - "🇨🇦 加拿大 04 | WARP"
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
 
   - name: "🎯 全球直连"
     type: select
