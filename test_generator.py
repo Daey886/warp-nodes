@@ -1,0 +1,81 @@
+import unittest
+import os
+import json
+import base64
+import yaml
+from generator import (
+    REGIONS,
+    DEFAULT_ENDPOINTS,
+    build_node_pool,
+    generate_clash_yaml,
+    generate_clash_providers,
+    generate_singbox_json,
+    generate_sub_txt,
+)
+
+class TestWarpGenerator(unittest.TestCase):
+    def setUp(self):
+        self.mock_account = {
+            'private_key': 'mock_priv_key_example=',
+            'public_key': 'bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=',
+            'v4': '172.16.0.2',
+            'v6': '2606:4700:110:88d6:7c4d:b582:9dc1:7a2c',
+            'reserved': [54, 177, 14]
+        }
+        self.mock_probe_list = [
+            {'host': '162.159.192.19', 'port': 987, 'loss': 0.0, 'delay': 140.0},
+            {'host': '162.159.195.165', 'port': 878, 'loss': 0.0, 'delay': 150.0},
+        ]
+
+    def test_node_pool_regions_and_counts(self):
+        nodes = build_node_pool(self.mock_account, self.mock_probe_list)
+        self.assertEqual(len(nodes), 32, "Total nodes should be 32 (8 regions * 4 nodes)")
+        
+        region_counts = {}
+        for n in nodes:
+            r = n['region']
+            region_counts[r] = region_counts.get(r, 0) + 1
+            self.assertEqual(len(n['reserved']), 3, "Reserved client_id must have 3 integers")
+            self.assertEqual(n['ip'], '172.16.0.2')
+            self.assertTrue(n['private_key'])
+            self.assertTrue(n['public_key'])
+
+        self.assertEqual(len(region_counts), 8, "Should cover exactly 8 regions")
+        for code, count in region_counts.items():
+            self.assertEqual(count, 4, f"Region {code} should have 4 nodes")
+
+    def test_clash_yaml_structure(self):
+        nodes = build_node_pool(self.mock_account, self.mock_probe_list)
+        yaml_content = generate_clash_yaml(nodes)
+        self.assertIn("🤖 海外AI", yaml_content)
+        self.assertIn("♻️ 自动优选", yaml_content)
+        self.assertIn("proxies:", yaml_content)
+        self.assertIn("proxy-groups:", yaml_content)
+        
+        # Parse with PyYAML to verify syntax
+        data = yaml.safe_load(yaml_content)
+        self.assertEqual(len(data['proxies']), 32)
+        group_names = [g['name'] for g in data['proxy-groups']]
+        self.assertIn("🚀 节点选择", group_names)
+        self.assertIn("🇺🇸 美国", group_names)
+        self.assertIn("🇭🇰 香港", group_names)
+
+    def test_singbox_json(self):
+        nodes = build_node_pool(self.mock_account, self.mock_probe_list)
+        sb_json = generate_singbox_json(nodes)
+        data = json.loads(sb_json)
+        self.assertIn("outbounds", data)
+        self.assertEqual(len(data['outbounds']), 32)
+        self.assertEqual(data['outbounds'][0]['type'], 'wireguard')
+
+    def test_sub_txt_base64(self):
+        nodes = build_node_pool(self.mock_account, self.mock_probe_list)
+        b64 = generate_sub_txt(nodes)
+        decoded = base64.b64decode(b64).decode('utf-8')
+        uris = decoded.splitlines()
+        self.assertEqual(len(uris), 32)
+        self.assertTrue(uris[0].startswith("wireguard://"))
+        self.assertIn("reserved=", uris[0])
+
+if __name__ == '__main__':
+    unittest.main()

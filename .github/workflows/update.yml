@@ -1,0 +1,45 @@
+name: Update WARP Subscriptions
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install cryptography pyyaml
+
+      - name: Run Unit Tests
+        run: |
+          python3 -m unittest test_generator.py
+
+      - name: Generate Subscriptions
+        run: |
+          python3 generator.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/
+          if git diff --staged --quiet; then
+            echo "No changes in subscriptions to commit."
+          else
+            git commit -m "chore(sub): auto update WARP subscriptions [skip ci]"
+            git push
+          fi
