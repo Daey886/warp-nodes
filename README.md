@@ -1,6 +1,6 @@
-# 🌐 WARP-Nodes · 8大国自动优选订阅中心
+# 🌐 WARP-Nodes · 9大地区自动优选订阅中心
 
-> 依托 Cloudflare Anycast 与国内探针真实测速数据，自动聚合生成 8 大国/地区精选 WireGuard 节点，每 6 小时自动更新发布。全面兼容 Mihomo (Clash Meta)、Sing-box、Shadowrocket、v2rayN 及各主流客户端。
+> 依托 Cloudflare Anycast 与国内探针真实测速数据，自动聚合生成 9 大地区精选 WARP+ WireGuard 节点，每 6 小时自动更新发布。全面兼容 Loon、Mihomo (Clash Meta)、Sing-box、Shadowrocket、v2rayN 及各主流客户端。
 
 [![Update WARP Subscriptions](https://github.com/Daey886/warp-nodes/actions/workflows/update.yml/badge.svg)](https://github.com/Daey886/warp-nodes/actions/workflows/update.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -9,9 +9,10 @@
 
 ## 📌 支持地区与节点分布
 
-每个地区精选 **4 个优质端点**（包含低延迟端点、防封锁备用端口与 IPv6 双栈端点），合计 **32 个高纯度节点**：
+每个地区精选 **4 个优质端点**（包含低延迟端点、防封锁备用端口与 IPv6 双栈端点），合计 **36 个高纯度 WARP+ 节点**：
 
 - 🇭🇰 **中国香港 (HK)** · 4 节点
+- 🇹🇼 **中国台湾 (TW)** · 4 节点
 - 🇯🇵 **日本 (JP)** · 4 节点
 - 🇸🇬 **新加坡 (SG)** · 4 节点
 - 🇺🇸 **美国 (US)** · 4 节点

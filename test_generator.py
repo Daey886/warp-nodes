@@ -29,7 +29,7 @@ class TestWarpGenerator(unittest.TestCase):
 
     def test_node_pool_regions_and_counts(self):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
-        self.assertEqual(len(nodes), 32, "Total nodes should be 32 (8 regions * 4 nodes)")
+        self.assertEqual(len(nodes), 36, "Total nodes should be 36 (9 regions * 4 nodes)")
         
         region_counts = {}
         for n in nodes:
@@ -40,7 +40,7 @@ class TestWarpGenerator(unittest.TestCase):
             self.assertTrue(n['private_key'])
             self.assertTrue(n['public_key'])
 
-        self.assertEqual(len(region_counts), 8, "Should cover exactly 8 regions")
+        self.assertEqual(len(region_counts), 9, "Should cover exactly 9 regions")
         for code, count in region_counts.items():
             self.assertEqual(count, 4, f"Region {code} should have 4 nodes")
 
@@ -54,18 +54,19 @@ class TestWarpGenerator(unittest.TestCase):
         
         # Parse with PyYAML to verify syntax
         data = yaml.safe_load(yaml_content)
-        self.assertEqual(len(data['proxies']), 32)
+        self.assertEqual(len(data['proxies']), 36)
         group_names = [g['name'] for g in data['proxy-groups']]
         self.assertIn("🚀 节点选择", group_names)
         self.assertIn("🇺🇸 美国", group_names)
         self.assertIn("🇭🇰 香港", group_names)
+        self.assertIn("🇹🇼 台湾", group_names)
 
     def test_singbox_json(self):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
         sb_json = generate_singbox_json(nodes)
         data = json.loads(sb_json)
         self.assertIn("outbounds", data)
-        self.assertEqual(len(data['outbounds']), 32)
+        self.assertEqual(len(data['outbounds']), 36)
         self.assertEqual(data['outbounds'][0]['type'], 'wireguard')
 
     def test_sub_txt_base64(self):
@@ -73,7 +74,7 @@ class TestWarpGenerator(unittest.TestCase):
         b64 = generate_sub_txt(nodes)
         decoded = base64.b64decode(b64).decode('utf-8')
         uris = decoded.splitlines()
-        self.assertEqual(len(uris), 32)
+        self.assertEqual(len(uris), 36)
         self.assertTrue(uris[0].startswith("wireguard://"))
         self.assertIn("reserved=", uris[0])
 
