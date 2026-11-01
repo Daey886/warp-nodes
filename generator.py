@@ -367,6 +367,35 @@ def generate_sub_txt(nodes):
     raw_text = "\n".join(uris)
     return base64.b64encode(raw_text.encode('utf-8')).decode('utf-8')
 
+def generate_loon_list(nodes):
+    """Generate standard Loon [Proxy] subscription format."""
+    lines = [
+        "# ==========================================",
+        f"# WARP-Nodes Loon 订阅 (标准 Proxy 格式)",
+        f"# Generated: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}",
+        "# ==========================================",
+        "[Proxy]"
+    ]
+    for n in nodes:
+        clean_server = n['server'].strip('[]')
+        r_str = f"[{','.join(map(str, n['reserved']))}]"
+        priv = n['private_key']
+        pub = n['public_key']
+        line = (
+            f"{n['name']} = wireguard,"
+            f"interface-ip={n['ip']},"
+            f"interface-ipV6={n['ipv6']},"
+            f'private-key="{priv}",'
+            f"mtu={n['mtu']},"
+            f"dns=1.1.1.1,"
+            f"dnsV6=2606:4700:4700::1111,"
+            f"keepalive=45,"
+            f'peers=[{{public-key="{pub}",reserved={r_str},allowed-ips="0.0.0.0/0, ::/0",endpoint={clean_server}:{n["port"]}}}],'
+            f"udp=true"
+        )
+        lines.append(line)
+    return "\n".join(lines)
+
 def main():
     print("1. Generating Cloudflare WARP Account...")
     account = generate_warp_account()
@@ -402,6 +431,11 @@ def main():
     sub_txt = generate_sub_txt(nodes)
     with open('dist/sub.txt', 'w', encoding='utf-8') as f:
         f.write(sub_txt)
+
+    # Loon Subscription
+    loon_txt = generate_loon_list(nodes)
+    with open('dist/loon.list', 'w', encoding='utf-8') as f:
+        f.write(loon_txt)
 
     # Raw URI list
     raw_uris = []

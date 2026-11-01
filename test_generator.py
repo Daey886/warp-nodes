@@ -77,5 +77,15 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertTrue(uris[0].startswith("wireguard://"))
         self.assertIn("reserved=", uris[0])
 
+    def test_loon_list(self):
+        nodes = build_node_pool(self.mock_account, self.mock_probe_list)
+        from generator import generate_loon_list
+        loon_text = generate_loon_list(nodes)
+        self.assertIn("[Proxy]", loon_text)
+        self.assertIn("interface-ip=172.16.0.2", loon_text)
+        self.assertIn("reserved=[54,177,14]", loon_text)
+        self.assertIn("wireguard,", loon_text)
+
+
 if __name__ == '__main__':
     unittest.main()

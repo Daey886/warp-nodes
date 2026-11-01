@@ -45,7 +45,17 @@
   https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/singbox.json
   ```
 
-### 3. Shadowrocket (小火箭) / v2rayN
+### 3. Loon 专属订阅 (标准 Proxy 格式)
+- **直接导入 Loon 节点/订阅**：
+  ```
+  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/loon.list
+  ```
+  *CDN 加速链接*：
+  ```
+  https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/loon.list
+  ```
+
+### 4. Shadowrocket (小火箭) / v2rayN
 - **通用 Base64 WireGuard 格式订阅**：
   ```
   https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/sub.txt
