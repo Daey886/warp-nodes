@@ -36,8 +36,18 @@ PROBE_SOURCES = [
     'https://raw.githubusercontent.com/n3rddd/warp-yxip/main/result.csv'
 ]
 
+# WARP+ License Key pool for upgrading accounts to Argo routing
+WARP_PLUS_KEYS = [
+    '2Py43N6C-X324m7ig-InM5o209',
+    'C9U6O74Y-LMfV0148-4l0a12rR',
+    'OQ6931DM-3E2q8f6u-0F418RfA',
+    'T09q1XE7-6T178Ino-7MAz9E82',
+    'ERq8604a-s86x5Q9S-y92U73Je',
+    'QW6L87l1-2r10Q6Fj-rex5g416'
+]
+
 def generate_warp_account():
-    """Register a Cloudflare WARP WireGuard account."""
+    """Register a Cloudflare WARP account and upgrade to WARP+."""
     priv = x25519.X25519PrivateKey.generate()
     pub = priv.public_key()
     priv_b64 = base64.b64encode(priv.private_bytes(
@@ -69,6 +79,8 @@ def generate_warp_account():
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode())
+            aid = data['id']
+            token = data['token']
             v4 = data['config']['interface']['addresses']['v4']
             v6 = data['config']['interface']['addresses']['v6']
             peer_pub = data['config']['peers'][0]['public_key']
@@ -80,12 +92,33 @@ def generate_warp_account():
             else:
                 reserved = [0, 0, 0]
             
+            # Upgrade account to WARP+ using verified keys
+            is_warp_plus = False
+            for k in WARP_PLUS_KEYS:
+                try:
+                    put_url = f'https://api.cloudflareclient.com/v0a2158/reg/{aid}/account'
+                    put_body = json.dumps({'license': k}).encode()
+                    put_req = urllib.request.Request(put_url, data=put_body, headers={
+                        'User-Agent': 'okhttp/3.12.1',
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Authorization': f'Bearer {token}'
+                    }, method='PUT')
+                    with urllib.request.urlopen(put_req, timeout=8) as put_resp:
+                        put_data = json.loads(put_resp.read().decode())
+                        if put_data.get('warp_plus'):
+                            print(f"Successfully upgraded account to WARP+ using key {k[:8]}...")
+                            is_warp_plus = True
+                            break
+                except Exception as ex:
+                    continue
+            
             return {
                 'private_key': priv_b64,
                 'public_key': peer_pub,
                 'v4': v4,
                 'v6': v6,
-                'reserved': reserved
+                'reserved': reserved,
+                'warp_plus': is_warp_plus
             }
     except Exception as e:
         print(f"Warning: Failed to register account via CF API: {e}. Using fallback defaults.")
@@ -141,9 +174,10 @@ def build_node_pool(account, probe_list):
         
         # 1. Use probe endpoints if available
         probe_idx = 0
+        tag = "WARP+" if account.get('warp_plus') else "WARP"
         for i in range(4):
             idx_name = f"{i+1:02d}"
-            node_name = f"{meta['flag']} {meta['name']} {idx_name} | WARP"
+            node_name = f"{meta['flag']} {meta['name']} {idx_name} | {tag}"
             
             if i < len(defaults):
                 host, port = defaults[i]
