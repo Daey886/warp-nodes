@@ -23,62 +23,80 @@
 
 ---
 
-## 🚀 客户端订阅链接
+## 🚀 客户端订阅使用指南
 
-### 1. ⚡ Cloudflare Worker 动态智能分发（根据你的网络千人千面）
-- **一键部署 Worker**：使用仓库根目录下的 [`worker.js`](worker.js) 部署到 Cloudflare Workers（绑定任意二级域名，如 `sub.yourdomain.com`）。
-- **客户端订阅地址**：
-  ```
-  https://你的Worker域名/clash
-  ```
-- **工作原理**：
-  - 自动通过 `request.cf` 实时识别访问者属于 **中国电信 / 中国移动 / 中国联通 / 中国广电 / 海外**；
-  - 毫秒级拼装并返回该运营商专属优选端点，告别跨网拥堵，实现人人秒开 4K！
+本项目提供两种使用方式：**方式 1 静态直链（开箱即用）** 与 **方式 2 Cloudflare Worker 动态智能分发（千人千面，速度极致）**。
 
 ---
 
-### 2. Mihomo / Clash Meta / Clash Verge Rev（静态全量版）
-- **完整开箱配置（全套策略组：手动/自动全层级 + 9大地区分组 + AI/流媒体/社区/开发分流 + 广告拦截）**：
-  ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/clash.yaml
-  ```
-  *CDN 加速链接*：
-  ```
+### 🌟 方式 1：静态直链订阅（最快上手，零配置）
+
+直接将下方链接复制并添加到你的代理客户端订阅中即可：
+
+#### 1. Mihomo / Clash Meta / Clash Verge Rev
+- **完整开箱配置（全套策略组：手动/自动全层级 + 9大地区独立低震荡优选 + AI/流媒体/社交/开发业务分流 + 广告拦截）**：
+  ```text
   https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/clash.yaml
   ```
+  *(国内高速 CDN 镜像，无需挂代理即可极速拉取；备用 GitHub Raw：`https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/clash.yaml`)*
 
-- **纯 Proxy-Provider 节点池（供已有配置直接引用）**：
-  ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/clash_providers.yaml
+- **纯 Proxy-Provider 节点池（供已有配置直接外部引用）**：
+  ```text
+  https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/clash_providers.yaml
   ```
 
-### 2. Sing-box
+#### 2. Sing-box
 - **出站规则 JSON 格式**：
-  ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/singbox.json
+  ```text
+  https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/singbox.json
   ```
 
-### 3. Loon 专属订阅 (标准 Proxy 格式)
+#### 3. Loon 专属订阅 (标准 Proxy 格式)
 - **直接导入 Loon 节点/订阅**：
-  ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/loon.list
-  ```
-  *CDN 加速链接*：
-  ```
+  ```text
   https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/loon.list
   ```
 
-### 4. Shadowrocket (小火箭) / v2rayN
+#### 4. Shadowrocket (小火箭) / v2rayN
 - **通用 Base64 WireGuard 格式订阅**：
-  ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/sub.txt
+  ```text
+  https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/sub.txt
   ```
 
-### 4. 原始链接列表（直观查看）
-- **单行 WireGuard URI 列表**：
+---
+
+### ⚡ 方式 2：Cloudflare Worker 动态分发（千人千面，智能感知网络）
+
+#### 官方在线动态订阅服务
+现已上线官方边缘动态节点分发节点，自动识别你的宽带运营商（电信 / 移动 / 联通 / 广电 / 海外）并下发最优端点：
+
+- **动态 Clash / Mihomo 订阅地址**：
+  ```text
+  https://warp.baey.top/clash
   ```
-  https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/nodes.txt
+- **边缘网络诊断与状态查看**：
+  ```text
+  https://warp.baey.top/status
   ```
+
+#### 自行私有部署（可选）
+如果你希望使用自己的私有域名，使用仓库根目录下的 [`worker.js`](worker.js) 部署到 Cloudflare Workers 即可：
+1. 在 Cloudflare Dashboard 创建一个 Worker（如命名为 `warp-nodes`）；
+2. 粘贴 [`worker.js`](worker.js) 源码并点击 Deploy；
+3. 为 Worker 绑定你的自定义域名（例如 `warp.yourdomain.com`）；
+4. 客户端订阅链接即为：`https://warp.yourdomain.com/clash`。
+
+---
+
+### ⚖️ 方式 1 与 方式 2 的核心区别
+
+| 对比维度 | 方式 1：静态直链（jsDelivr / GitHub） | 方式 2：Cloudflare Worker 动态引擎 |
+| :--- | :--- | :--- |
+| **工作原理** | 下载 GitHub 每 6 小时构建好的固定 `clash.yaml` | 客户端请求时，Worker 实时读取你的 ASN 动态拼装专属配置 |
+| **网络适配能力** | **全国一锅端**。不管电信移动联通，拿到的 36 个 IP 完全相同 | **千人千面**。自动识别电信/移动/联通，给最优路由与端点标签 |
+| **高峰期体验** | 部分运营商遇到晚高峰跨网 QoS 时可能降速或丢包 | 电信走美西、移动走港新、联通走欧陆，避开跨网拥堵 |
+| **上手门槛** | 零门槛，复制直链粘贴即用 | 现成官方链接 `https://warp.baey.top/clash` 同样开箱即用 |
+| **稳定性** | 依赖公共 CDN 镜像 | 独立域名解析与 Cloudflare 边缘计算，链接稳定持久 |
 
 ---
 
