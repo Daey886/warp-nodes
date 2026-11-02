@@ -241,7 +241,7 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
-  - GEOSITE,gemini,🤖 海外AI
+  - GEOSITE,google-gemini,🤖 海外AI
   - GEOSITE,youtube,🎬 国际流媒体
   - GEOSITE,netflix,🎬 国际流媒体
   - GEOSITE,spotify,🎬 国际流媒体
