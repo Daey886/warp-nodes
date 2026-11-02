@@ -56,6 +56,8 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertNotIn("💬 社交社区", yaml_content)
         self.assertNotIn("👨‍💻 开发者服务", yaml_content)
         self.assertIn("🎯 全球直连", yaml_content)
+        self.assertIn("DOMAIN-SUFFIX,gemini.google.com,🤖 海外AI", yaml_content)
+        self.assertNotIn("GEOSITE,gemini,", yaml_content)
         self.assertIn("hidden: true", yaml_content)
         self.assertIn("🖐️ 手动选择", yaml_content)
         self.assertNotIn("🌐 地区手动选择", yaml_content)

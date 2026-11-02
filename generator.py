@@ -348,7 +348,11 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
-  - GEOSITE,gemini,🤖 海外AI
+  - DOMAIN-SUFFIX,gemini.google.com,🤖 海外AI
+  - DOMAIN-SUFFIX,bard.google.com,🤖 海外AI
+  - DOMAIN-SUFFIX,ai.google.dev,🤖 海外AI
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,🤖 海外AI
+  - DOMAIN-SUFFIX,makersuite.google.com,🤖 海外AI
   - GEOSITE,bing,🎯 全球直连
   - GEOSITE,google,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
