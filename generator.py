@@ -552,6 +552,35 @@ def main():
     with open('dist/nodes.txt', 'w', encoding='utf-8') as f:
         f.write("\n".join(raw_uris))
 
+    # Meta JSON for Cloudflare Worker & dynamic routing
+    quota_desc = "WARP+ 无限 (1.84 PB)" if account.get('warp_plus') else "WARP 免费版"
+    metadata = {
+        'updated_at': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
+        'account': {
+            'warp_plus': account.get('warp_plus'),
+            'quota': quota_desc,
+            'ip': account.get('v4'),
+            'ipv6': account.get('v6'),
+            'private_key': account.get('private_key'),
+            'public_key': account.get('public_key'),
+            'reserved': account.get('reserved')
+        },
+        'regions': REGIONS,
+        'nodes': [
+            {
+                'name': n['name'],
+                'region': n.get('region'),
+                'server': n['server'],
+                'port': n['port'],
+                'loss': n.get('loss', 0.0),
+                'delay': n.get('delay', 0)
+            }
+            for n in nodes if n.get('region') != 'INFO'
+        ]
+    }
+    with open('dist/meta.json', 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, indent=2, ensure_ascii=False)
+
     print("Successfully built all outputs in dist/ directory!")
 
 if __name__ == '__main__':

@@ -102,6 +102,12 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertIn("reserved=[54,177,14]", loon_text)
         self.assertIn("wireguard,", loon_text)
 
+    def test_meta_json_structure(self):
+        with open('dist/meta.json') as f:
+            data = json.load(f)
+        self.assertEqual(data['account']['ip'], '172.16.0.2')
+        self.assertTrue(len(data['nodes']) >= 36)
+
 
 if __name__ == '__main__':
     unittest.main()
