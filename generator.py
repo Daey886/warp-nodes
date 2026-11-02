@@ -241,12 +241,35 @@ def generate_clash_yaml(nodes):
 
     all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
-    # Group names per region (纯手动选择，避免 url-test 频繁切节点导致 WireGuard 断流卡顿)
+    # 地区分组 (各地区独立分组，内含当前地区的节点)
     region_groups = []
+    region_auto_names = []
+    region_manual_names = []
     for code, meta in REGIONS.items():
         reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
+        auto_group_name = f"{meta['flag']} {meta['name']} 自动"
+        manual_group_name = f"{meta['flag']} {meta['name']} 手动"
+        region_auto_names.append(f'"{auto_group_name}"')
+        region_manual_names.append(f'"{manual_group_name}"')
+        
+        # 1. 地区主分组（优先手动，也可切该区自动）
         region_groups.append(f"""  - name: "{meta['flag']} {meta['name']}"
     type: select
+    proxies:
+      - "{manual_group_name}"
+      - "{auto_group_name}"
+{chr(10).join(['      - ' + name for name in reg_names])}
+
+  - name: "{manual_group_name}"
+    type: select
+    proxies:
+{chr(10).join(['      - ' + name for name in reg_names])}
+
+  - name: "{auto_group_name}"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
 {chr(10).join(['      - ' + name for name in reg_names])}""")
 
@@ -288,9 +311,38 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
+      - "🖐️ 手动选择"
+      - "🌐 地区手动选择"
+      - "♻️ 自动选择"
+      - "⚡ 地区自动选择"
       - "🎯 全球直连"
 {chr(10).join(['      - ' + name for name in region_select_names])}
+
+  - name: "🖐️ 手动选择"
+    type: select
+    proxies:
 {chr(10).join(['      - ' + name for name in all_names])}
+
+  - name: "🌐 地区手动选择"
+    type: select
+    proxies:
+{chr(10).join(['      - ' + name for name in region_manual_names])}
+
+  - name: "♻️ 自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+{chr(10).join(['      - ' + name for name in all_names])}
+
+  - name: "⚡ 地区自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+{chr(10).join(['      - ' + name for name in region_auto_names])}
 
   - name: "🤖 海外AI"
     type: select
@@ -300,6 +352,41 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇬🇧 英国"
       - "🚀 节点选择"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "🎬 国际流媒体"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇸🇬 新加坡"
+      - "🇯🇵 日本"
+      - "🇺🇸 美国"
+      - "🇹🇼 台湾"
+      - "🇭🇰 香港"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "💬 社交社区"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "👨‍💻 开发者服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇺🇸 美国"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🎯 全球直连"
+      - "🖐️ 手动选择"
 
 {chr(10).join(region_groups)}
 
@@ -318,9 +405,17 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
+  - GEOSITE,gemini,🤖 海外AI
+  - GEOSITE,youtube,🎬 国际流媒体
+  - GEOSITE,netflix,🎬 国际流媒体
+  - GEOSITE,spotify,🎬 国际流媒体
+  - GEOSITE,telegram,💬 社交社区
+  - GEOSITE,twitter,💬 社交社区
+  - GEOSITE,discord,💬 社交社区
+  - GEOSITE,reddit,💬 社交社区
+  - GEOSITE,github,👨‍💻 开发者服务
+  - GEOSITE,gitlab,👨‍💻 开发者服务
   - GEOSITE,google,🚀 节点选择
-  - GEOSITE,github,🚀 节点选择
-  - GEOSITE,telegram,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOIP,CN,🎯 全球直连
   - MATCH,🚀 节点选择

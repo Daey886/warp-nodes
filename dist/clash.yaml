@@ -1,6 +1,6 @@
 # ==========================================
 # WARP-Nodes 8大国精选订阅 (Mihomo / Clash Meta)
-# Generated: 2026-11-02 01:52:45 UTC
+# Generated: 2026-11-02 02:00:02 UTC
 # ==========================================
 
 port: 7890
@@ -33,10 +33,10 @@ proxies:
     server: "127.0.0.1"
     port: 65535
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -49,10 +49,10 @@ proxies:
     server: "162.159.192.19"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -65,10 +65,10 @@ proxies:
     server: "162.159.195.165"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -81,10 +81,10 @@ proxies:
     server: "162.159.192.19"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -97,10 +97,10 @@ proxies:
     server: "2606:4700:d0::a29f:c013"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -113,10 +113,10 @@ proxies:
     server: "162.159.192.83"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -129,10 +129,10 @@ proxies:
     server: "162.159.195.83"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -145,10 +145,10 @@ proxies:
     server: "162.159.192.83"
     port: 854
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -161,10 +161,10 @@ proxies:
     server: "2606:4700:d0::a29f:c053"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -177,10 +177,10 @@ proxies:
     server: "162.159.192.163"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -193,10 +193,10 @@ proxies:
     server: "162.159.195.179"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -209,10 +209,10 @@ proxies:
     server: "162.159.192.163"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -225,10 +225,10 @@ proxies:
     server: "2606:4700:d0::a29f:c0a3"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -241,10 +241,10 @@ proxies:
     server: "162.159.192.44"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -257,10 +257,10 @@ proxies:
     server: "162.159.195.208"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -273,10 +273,10 @@ proxies:
     server: "162.159.192.44"
     port: 854
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -289,10 +289,10 @@ proxies:
     server: "2606:4700:d0::a29f:c02c"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -305,10 +305,10 @@ proxies:
     server: "162.159.192.5"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -321,10 +321,10 @@ proxies:
     server: "162.159.193.10"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -337,10 +337,10 @@ proxies:
     server: "162.159.192.5"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -353,10 +353,10 @@ proxies:
     server: "2606:4700:d0::a29f:c005"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -369,10 +369,10 @@ proxies:
     server: "162.159.192.36"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -385,10 +385,10 @@ proxies:
     server: "162.159.195.246"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -401,10 +401,10 @@ proxies:
     server: "162.159.192.36"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -417,10 +417,10 @@ proxies:
     server: "2606:4700:d0::a29f:c024"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -433,10 +433,10 @@ proxies:
     server: "162.159.192.82"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -449,10 +449,10 @@ proxies:
     server: "162.159.195.189"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -465,10 +465,10 @@ proxies:
     server: "162.159.192.82"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -481,10 +481,10 @@ proxies:
     server: "2606:4700:d0::a29f:c052"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -497,10 +497,10 @@ proxies:
     server: "162.159.192.53"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -513,10 +513,10 @@ proxies:
     server: "162.159.193.1"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -529,10 +529,10 @@ proxies:
     server: "162.159.192.53"
     port: 854
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -545,10 +545,10 @@ proxies:
     server: "2606:4700:d0::a29f:c035"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -561,10 +561,10 @@ proxies:
     server: "162.159.192.220"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -577,10 +577,10 @@ proxies:
     server: "162.159.195.1"
     port: 987
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -593,10 +593,10 @@ proxies:
     server: "162.159.192.220"
     port: 878
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -609,10 +609,10 @@ proxies:
     server: "2606:4700:d0::a29f:c0dc"
     port: 2408
     ip: "172.16.0.2"
-    ipv6: "2606:4700:110:8f6c:5ac4:f891:971a:95e5"
-    private-key: "UM8MvCSQp3S7L1MJBjOYTKo+RElv1KcAvLo6hk1a/Uw="
+    ipv6: "2606:4700:110:89dd:ea06:43c4:9e7:c84b"
+    private-key: "uNc00C+/E5TEdjcZvXIWEm6E5S6jeZPlWXI6sAE3uWc="
     public-key: "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
-    reserved: [51, 33, 1]
+    reserved: [128, 54, 23]
     mtu: 1280
     persistent-keepalive: 25
     remote-dns-resolve: true
@@ -625,6 +625,10 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
+      - "🖐️ 手动选择"
+      - "🌐 地区手动选择"
+      - "♻️ 自动选择"
+      - "⚡ 地区自动选择"
       - "🎯 全球直连"
       - "🇭🇰 香港"
       - "🇹🇼 台湾"
@@ -635,6 +639,10 @@ proxy-groups:
       - "🇩🇪 德国"
       - "🇰🇷 韩国"
       - "🇨🇦 加拿大"
+
+  - name: "🖐️ 手动选择"
+    type: select
+    proxies:
       - "🇭🇰 香港 01 | WARP+"
       - "🇭🇰 香港 02 | WARP+"
       - "🇭🇰 香港 03 | WARP+"
@@ -672,6 +680,78 @@ proxy-groups:
       - "🇨🇦 加拿大 03 | WARP+"
       - "🇨🇦 加拿大 04 | WARP+"
 
+  - name: "🌐 地区手动选择"
+    type: select
+    proxies:
+      - "🇭🇰 香港 手动"
+      - "🇹🇼 台湾 手动"
+      - "🇯🇵 日本 手动"
+      - "🇸🇬 新加坡 手动"
+      - "🇺🇸 美国 手动"
+      - "🇬🇧 英国 手动"
+      - "🇩🇪 德国 手动"
+      - "🇰🇷 韩国 手动"
+      - "🇨🇦 加拿大 手动"
+
+  - name: "♻️ 自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
+      - "🇹🇼 台湾 01 | WARP+"
+      - "🇹🇼 台湾 02 | WARP+"
+      - "🇹🇼 台湾 03 | WARP+"
+      - "🇹🇼 台湾 04 | WARP+"
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
+
+  - name: "⚡ 地区自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+      - "🇭🇰 香港 自动"
+      - "🇹🇼 台湾 自动"
+      - "🇯🇵 日本 自动"
+      - "🇸🇬 新加坡 自动"
+      - "🇺🇸 美国 自动"
+      - "🇬🇧 英国 自动"
+      - "🇩🇪 德国 自动"
+      - "🇰🇷 韩国 自动"
+      - "🇨🇦 加拿大 自动"
+
   - name: "🤖 海外AI"
     type: select
     proxies:
@@ -680,9 +760,65 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇬🇧 英国"
       - "🚀 节点选择"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "🎬 国际流媒体"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇸🇬 新加坡"
+      - "🇯🇵 日本"
+      - "🇺🇸 美国"
+      - "🇹🇼 台湾"
+      - "🇭🇰 香港"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "💬 社交社区"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "👨‍💻 开发者服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇺🇸 美国"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🎯 全球直连"
+      - "🖐️ 手动选择"
 
   - name: "🇭🇰 香港"
     type: select
+    proxies:
+      - "🇭🇰 香港 手动"
+      - "🇭🇰 香港 自动"
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
+
+  - name: "🇭🇰 香港 手动"
+    type: select
+    proxies:
+      - "🇭🇰 香港 01 | WARP+"
+      - "🇭🇰 香港 02 | WARP+"
+      - "🇭🇰 香港 03 | WARP+"
+      - "🇭🇰 香港 04 | WARP+"
+
+  - name: "🇭🇰 香港 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
       - "🇭🇰 香港 01 | WARP+"
       - "🇭🇰 香港 02 | WARP+"
@@ -691,12 +827,54 @@ proxy-groups:
   - name: "🇹🇼 台湾"
     type: select
     proxies:
+      - "🇹🇼 台湾 手动"
+      - "🇹🇼 台湾 自动"
+      - "🇹🇼 台湾 01 | WARP+"
+      - "🇹🇼 台湾 02 | WARP+"
+      - "🇹🇼 台湾 03 | WARP+"
+      - "🇹🇼 台湾 04 | WARP+"
+
+  - name: "🇹🇼 台湾 手动"
+    type: select
+    proxies:
+      - "🇹🇼 台湾 01 | WARP+"
+      - "🇹🇼 台湾 02 | WARP+"
+      - "🇹🇼 台湾 03 | WARP+"
+      - "🇹🇼 台湾 04 | WARP+"
+
+  - name: "🇹🇼 台湾 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
+    proxies:
       - "🇹🇼 台湾 01 | WARP+"
       - "🇹🇼 台湾 02 | WARP+"
       - "🇹🇼 台湾 03 | WARP+"
       - "🇹🇼 台湾 04 | WARP+"
   - name: "🇯🇵 日本"
     type: select
+    proxies:
+      - "🇯🇵 日本 手动"
+      - "🇯🇵 日本 自动"
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
+
+  - name: "🇯🇵 日本 手动"
+    type: select
+    proxies:
+      - "🇯🇵 日本 01 | WARP+"
+      - "🇯🇵 日本 02 | WARP+"
+      - "🇯🇵 日本 03 | WARP+"
+      - "🇯🇵 日本 04 | WARP+"
+
+  - name: "🇯🇵 日本 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
       - "🇯🇵 日本 01 | WARP+"
       - "🇯🇵 日本 02 | WARP+"
@@ -705,12 +883,54 @@ proxy-groups:
   - name: "🇸🇬 新加坡"
     type: select
     proxies:
+      - "🇸🇬 新加坡 手动"
+      - "🇸🇬 新加坡 自动"
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
+
+  - name: "🇸🇬 新加坡 手动"
+    type: select
+    proxies:
+      - "🇸🇬 新加坡 01 | WARP+"
+      - "🇸🇬 新加坡 02 | WARP+"
+      - "🇸🇬 新加坡 03 | WARP+"
+      - "🇸🇬 新加坡 04 | WARP+"
+
+  - name: "🇸🇬 新加坡 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
+    proxies:
       - "🇸🇬 新加坡 01 | WARP+"
       - "🇸🇬 新加坡 02 | WARP+"
       - "🇸🇬 新加坡 03 | WARP+"
       - "🇸🇬 新加坡 04 | WARP+"
   - name: "🇺🇸 美国"
     type: select
+    proxies:
+      - "🇺🇸 美国 手动"
+      - "🇺🇸 美国 自动"
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
+
+  - name: "🇺🇸 美国 手动"
+    type: select
+    proxies:
+      - "🇺🇸 美国 01 | WARP+"
+      - "🇺🇸 美国 02 | WARP+"
+      - "🇺🇸 美国 03 | WARP+"
+      - "🇺🇸 美国 04 | WARP+"
+
+  - name: "🇺🇸 美国 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
       - "🇺🇸 美国 01 | WARP+"
       - "🇺🇸 美国 02 | WARP+"
@@ -719,12 +939,54 @@ proxy-groups:
   - name: "🇬🇧 英国"
     type: select
     proxies:
+      - "🇬🇧 英国 手动"
+      - "🇬🇧 英国 自动"
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
+
+  - name: "🇬🇧 英国 手动"
+    type: select
+    proxies:
+      - "🇬🇧 英国 01 | WARP+"
+      - "🇬🇧 英国 02 | WARP+"
+      - "🇬🇧 英国 03 | WARP+"
+      - "🇬🇧 英国 04 | WARP+"
+
+  - name: "🇬🇧 英国 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
+    proxies:
       - "🇬🇧 英国 01 | WARP+"
       - "🇬🇧 英国 02 | WARP+"
       - "🇬🇧 英国 03 | WARP+"
       - "🇬🇧 英国 04 | WARP+"
   - name: "🇩🇪 德国"
     type: select
+    proxies:
+      - "🇩🇪 德国 手动"
+      - "🇩🇪 德国 自动"
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
+
+  - name: "🇩🇪 德国 手动"
+    type: select
+    proxies:
+      - "🇩🇪 德国 01 | WARP+"
+      - "🇩🇪 德国 02 | WARP+"
+      - "🇩🇪 德国 03 | WARP+"
+      - "🇩🇪 德国 04 | WARP+"
+
+  - name: "🇩🇪 德国 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
       - "🇩🇪 德国 01 | WARP+"
       - "🇩🇪 德国 02 | WARP+"
@@ -733,12 +995,54 @@ proxy-groups:
   - name: "🇰🇷 韩国"
     type: select
     proxies:
+      - "🇰🇷 韩国 手动"
+      - "🇰🇷 韩国 自动"
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
+
+  - name: "🇰🇷 韩国 手动"
+    type: select
+    proxies:
+      - "🇰🇷 韩国 01 | WARP+"
+      - "🇰🇷 韩国 02 | WARP+"
+      - "🇰🇷 韩国 03 | WARP+"
+      - "🇰🇷 韩国 04 | WARP+"
+
+  - name: "🇰🇷 韩国 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
+    proxies:
       - "🇰🇷 韩国 01 | WARP+"
       - "🇰🇷 韩国 02 | WARP+"
       - "🇰🇷 韩国 03 | WARP+"
       - "🇰🇷 韩国 04 | WARP+"
   - name: "🇨🇦 加拿大"
     type: select
+    proxies:
+      - "🇨🇦 加拿大 手动"
+      - "🇨🇦 加拿大 自动"
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
+
+  - name: "🇨🇦 加拿大 手动"
+    type: select
+    proxies:
+      - "🇨🇦 加拿大 01 | WARP+"
+      - "🇨🇦 加拿大 02 | WARP+"
+      - "🇨🇦 加拿大 03 | WARP+"
+      - "🇨🇦 加拿大 04 | WARP+"
+
+  - name: "🇨🇦 加拿大 自动"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 80
     proxies:
       - "🇨🇦 加拿大 01 | WARP+"
       - "🇨🇦 加拿大 02 | WARP+"
@@ -760,9 +1064,17 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
+  - GEOSITE,gemini,🤖 海外AI
+  - GEOSITE,youtube,🎬 国际流媒体
+  - GEOSITE,netflix,🎬 国际流媒体
+  - GEOSITE,spotify,🎬 国际流媒体
+  - GEOSITE,telegram,💬 社交社区
+  - GEOSITE,twitter,💬 社交社区
+  - GEOSITE,discord,💬 社交社区
+  - GEOSITE,reddit,💬 社交社区
+  - GEOSITE,github,👨‍💻 开发者服务
+  - GEOSITE,gitlab,👨‍💻 开发者服务
   - GEOSITE,google,🚀 节点选择
-  - GEOSITE,github,🚀 节点选择
-  - GEOSITE,telegram,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOIP,CN,🎯 全球直连
   - MATCH,🚀 节点选择

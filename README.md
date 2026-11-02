@@ -26,7 +26,7 @@
 ## 🚀 客户端订阅链接
 
 ### 1. Mihomo / Clash Meta / Clash Verge Rev（推荐）
-- **完整开箱配置（自带 8 大国分流策略组 + 纯手动选择防跳切 + 广告拦截）**：
+- **完整开箱配置（全套策略组：手动/自动全层级 + 9大地区分组 + AI/流媒体/社区/开发分流 + 广告拦截）**：
   ```
   https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/clash.yaml
   ```
