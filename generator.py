@@ -241,23 +241,7 @@ def generate_clash_yaml(nodes):
 
     all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
-    # 地区分组：每个地区独立分组，直接采用 url-test 自动优选（同地区内部4个节点，延迟一致，不跨区跳切）
-    region_groups = []
-    region_auto_names = []
-    for code, meta in REGIONS.items():
-        reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
-        group_name = f"{meta['flag']} {meta['name']}"
-        region_auto_names.append(f'"{group_name}"')
-        
-        region_groups.append(f"""  - name: "{group_name}"
-    hidden: true
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 600
-    tolerance: 80
-    proxies:
-{chr(10).join(['      - ' + name for name in reg_names])}""")
-
+    # 地区标签仅用于节点标识，不生成地区策略组；避免客户端显示大量无用分组。
     clash_content = f"""# ==========================================
 # WARP-Nodes 8大国精选订阅 (Mihomo / Clash Meta)
 # Generated: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
@@ -294,15 +278,8 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "🖐️ 手动选择"
       - "♻️ 自动选择"
-      - "⚡ 地区自动选择"
       - "🎯 全球直连"
-
-  - name: "🖐️ 手动选择"
-    type: select
-    proxies:
-{chr(10).join(['      - ' + name for name in all_names])}
 
   - name: "♻️ 自动选择"
     type: url-test
@@ -312,26 +289,10 @@ proxy-groups:
     proxies:
 {chr(10).join(['      - ' + name for name in all_names])}
 
-  - name: "⚡ 地区自动选择"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 600
-    tolerance: 100
-    proxies:
-{chr(10).join(['      - ' + name for name in region_auto_names])}
-
   - name: "🤖 海外AI"
     type: select
     proxies:
-      - "🇺🇸 美国"
-      - "🇯🇵 日本"
-      - "🇸🇬 新加坡"
-      - "🇬🇧 英国"
-      - "🚀 节点选择"
-      - "🖐️ 手动选择"
       - "♻️ 自动选择"
-
-{chr(10).join(region_groups)}
 
   - name: "🎯 全球直连"
     type: select

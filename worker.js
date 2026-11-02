@@ -119,17 +119,7 @@ function renderClashConfig(meta, isp, ispTag, asn) {
     nodeNames.push(`"${n.name}"`);
   }
 
-  // 9 大区域独立分组
-  const regionAutoNames = [];
-  const regionGroupBlocks = [];
-
-  for (let [code, metaReg] of Object.entries(regions)) {
-    const regNodes = nodes.filter(n => n.region === code).map(n => `      - "${n.name}"`);
-    const groupName = `${metaReg.flag} ${metaReg.name}`;
-    regionAutoNames.push(`"${groupName}"`);
-
-    regionGroupBlocks.push(`  - name: "${groupName}"\n    hidden: true\n    type: url-test\n    url: http://cp.cloudflare.com/generate_204\n    interval: 600\n    tolerance: 80\n    proxies:\n${regNodes.join('\n')}`);
-  }
+  // 地区标签仅用于节点标识，不生成地区策略组；避免客户端显示大量无用分组。
 
   return `# ==========================================
 # WARP-Nodes 专属动态分流订阅
@@ -168,15 +158,8 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "🖐️ 手动选择"
       - "♻️ 自动选择"
-      - "⚡ 地区自动选择"
       - "🎯 全球直连"
-
-  - name: "🖐️ 手动选择"
-    type: select
-    proxies:
-${nodeNames.map(name => `      - ${name}`).join('\n')}
 
   - name: "♻️ 自动选择"
     type: url-test
@@ -186,26 +169,10 @@ ${nodeNames.map(name => `      - ${name}`).join('\n')}
     proxies:
 ${nodeNames.map(name => `      - ${name}`).join('\n')}
 
-  - name: "⚡ 地区自动选择"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 600
-    tolerance: 100
-    proxies:
-${regionAutoNames.map(name => `      - ${name}`).join('\n')}
-
   - name: "🤖 海外AI"
     type: select
     proxies:
-      - "🇺🇸 美国"
-      - "🇯🇵 日本"
-      - "🇸🇬 新加坡"
-      - "🇬🇧 英国"
-      - "🚀 节点选择"
-      - "🖐️ 手动选择"
       - "♻️ 自动选择"
-
-${regionGroupBlocks.join('\n\n')}
 
   - name: "🎯 全球直连"
     type: select

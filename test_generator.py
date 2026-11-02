@@ -58,11 +58,12 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertIn("🎯 全球直连", yaml_content)
         self.assertIn("DOMAIN-SUFFIX,gemini.google.com,🤖 海外AI", yaml_content)
         self.assertNotIn("GEOSITE,gemini,", yaml_content)
-        self.assertIn("hidden: true", yaml_content)
-        self.assertIn("🖐️ 手动选择", yaml_content)
+        self.assertNotIn("hidden: true", yaml_content)
+        self.assertNotIn("🖐️ 手动选择", yaml_content)
         self.assertNotIn("🌐 地区手动选择", yaml_content)
         self.assertIn("♻️ 自动选择", yaml_content)
-        self.assertIn("⚡ 地区自动选择", yaml_content)
+        self.assertNotIn("⚡ 地区自动选择", yaml_content)
+        self.assertNotIn("hidden: true", yaml_content)
         self.assertIn("persistent-keepalive: 25", yaml_content)
         self.assertIn("proxies:", yaml_content)
         self.assertIn("proxy-groups:", yaml_content)
@@ -71,19 +72,13 @@ class TestWarpGenerator(unittest.TestCase):
         data = yaml.safe_load(yaml_content)
         self.assertEqual(len(data['proxies']), 37)
         group_names = [g['name'] for g in data['proxy-groups']]
-        self.assertIn("🚀 节点选择", group_names)
-        self.assertIn("🖐️ 手动选择", group_names)
-        self.assertNotIn("🌐 地区手动选择", group_names)
-        self.assertIn("♻️ 自动选择", group_names)
-        self.assertIn("⚡ 地区自动选择", group_names)
-        self.assertIn("🤖 海外AI", group_names)
-        self.assertIn("🛑 广告拦截", group_names)
-        self.assertIn("🎯 全球直连", group_names)
-        hidden_groups = [g['name'] for g in data['proxy-groups'] if g.get('hidden') is True]
-        self.assertEqual(set(hidden_groups), {
-            "🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇸🇬 新加坡", "🇺🇸 美国",
-            "🇬🇧 英国", "🇩🇪 德国", "🇰🇷 韩国", "🇨🇦 加拿大",
+        self.assertEqual(set(group_names), {
+            "🚀 节点选择", "♻️ 自动选择", "🤖 海外AI",
+            "🛑 广告拦截", "🎯 全球直连",
         })
+        self.assertNotIn("🖐️ 手动选择", group_names)
+        self.assertNotIn("⚡ 地区自动选择", group_names)
+        self.assertEqual([g['name'] for g in data['proxy-groups'] if g.get('hidden') is True], [])
         self.assertEqual(group_names.count("🎯 全球直连"), 1)
 
     def test_singbox_json(self):
