@@ -1,4 +1,4 @@
-# 🌐 WARP-Nodes · 9大地区自动优选订阅中心
+# 🌐 WARP-Nodes · 9大地区精选订阅中心
 
 > 依托 Cloudflare Anycast 与国内探针真实测速数据，自动聚合生成 9 大地区精选 WARP+ WireGuard 节点，每 6 小时自动更新发布。全面兼容 Loon、Mihomo (Clash Meta)、Sing-box、Shadowrocket、v2rayN 及各主流客户端。
 
@@ -26,7 +26,7 @@
 ## 🚀 客户端订阅链接
 
 ### 1. Mihomo / Clash Meta / Clash Verge Rev（推荐）
-- **完整开箱配置（自带 8 大国分流策略组 + 自动优选 + 广告拦截）**：
+- **完整开箱配置（自带 8 大国分流策略组 + 纯手动选择防跳切 + 广告拦截）**：
   ```
   https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/clash.yaml
   ```

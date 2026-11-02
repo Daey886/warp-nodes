@@ -232,6 +232,7 @@ def generate_clash_yaml(nodes):
     public-key: "{n['public_key']}"
     reserved: {n['reserved']}
     mtu: {n['mtu']}
+    persistent-keepalive: 25
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
@@ -240,28 +241,11 @@ def generate_clash_yaml(nodes):
 
     all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
-    # Group names per region
+    # Group names per region (纯手动选择，避免 url-test 频繁切节点导致 WireGuard 断流卡顿)
     region_groups = []
     for code, meta in REGIONS.items():
         reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
         region_groups.append(f"""  - name: "{meta['flag']} {meta['name']}"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "{meta['flag']} {meta['name']} 自动优选"
-      - "{meta['flag']} {meta['name']} 手动选择"
-
-  - name: "{meta['flag']} {meta['name']} 自动优选"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-{chr(10).join(['      - ' + name for name in reg_names])}
-
-  - name: "{meta['flag']} {meta['name']} 手动选择"
     type: select
     proxies:
 {chr(10).join(['      - ' + name for name in reg_names])}""")
@@ -269,7 +253,7 @@ def generate_clash_yaml(nodes):
     region_select_names = [f'"{meta["flag"]} {meta["name"]}"' for code, meta in REGIONS.items()]
 
     clash_content = f"""# ==========================================
-# WARP-Nodes 8大国自动优选订阅 (Mihomo / Clash Meta)
+# WARP-Nodes 8大国精选订阅 (Mihomo / Clash Meta)
 # Generated: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
 # ==========================================
 
@@ -304,16 +288,8 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "♻️ 自动优选"
       - "🎯 全球直连"
 {chr(10).join(['      - ' + name for name in region_select_names])}
-
-  - name: "♻️ 自动优选"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
 {chr(10).join(['      - ' + name for name in all_names])}
 
   - name: "🤖 海外AI"
@@ -366,6 +342,7 @@ def generate_clash_providers(nodes):
     public-key: "{n['public_key']}"
     reserved: {n['reserved']}
     mtu: {n['mtu']}
+    persistent-keepalive: 25
     remote-dns-resolve: true
     dns:
       - 1.1.1.1

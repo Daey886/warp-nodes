@@ -52,7 +52,8 @@ class TestWarpGenerator(unittest.TestCase):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
         yaml_content = generate_clash_yaml(nodes)
         self.assertIn("🤖 海外AI", yaml_content)
-        self.assertIn("♻️ 自动优选", yaml_content)
+        self.assertNotIn("♻️ 自动优选", yaml_content)
+        self.assertIn("persistent-keepalive: 25", yaml_content)
         self.assertIn("proxies:", yaml_content)
         self.assertIn("proxy-groups:", yaml_content)
         
@@ -64,6 +65,9 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertIn("🇺🇸 美国", group_names)
         self.assertIn("🇭🇰 香港", group_names)
         self.assertIn("🇹🇼 台湾", group_names)
+        # All groups should be 'select' type (no url-test to prevent jitter)
+        for g in data['proxy-groups']:
+            self.assertEqual(g['type'], 'select')
 
     def test_singbox_json(self):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
