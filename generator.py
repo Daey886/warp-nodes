@@ -241,39 +241,21 @@ def generate_clash_yaml(nodes):
 
     all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
-    # 地区分组 (各地区独立分组，内含当前地区的节点)
+    # 地区分组：每个地区独立分组，直接采用 url-test 自动优选（同地区内部4个节点，延迟一致，不跨区跳切）
     region_groups = []
     region_auto_names = []
-    region_manual_names = []
     for code, meta in REGIONS.items():
         reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
-        auto_group_name = f"{meta['flag']} {meta['name']} 自动"
-        manual_group_name = f"{meta['flag']} {meta['name']} 手动"
-        region_auto_names.append(f'"{auto_group_name}"')
-        region_manual_names.append(f'"{manual_group_name}"')
+        group_name = f"{meta['flag']} {meta['name']}"
+        region_auto_names.append(f'"{group_name}"')
         
-        # 1. 地区主分组（优先手动，也可切该区自动）
-        region_groups.append(f"""  - name: "{meta['flag']} {meta['name']}"
-    type: select
-    proxies:
-      - "{manual_group_name}"
-      - "{auto_group_name}"
-{chr(10).join(['      - ' + name for name in reg_names])}
-
-  - name: "{manual_group_name}"
-    type: select
-    proxies:
-{chr(10).join(['      - ' + name for name in reg_names])}
-
-  - name: "{auto_group_name}"
+        region_groups.append(f"""  - name: "{group_name}"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
     interval: 600
     tolerance: 80
     proxies:
 {chr(10).join(['      - ' + name for name in reg_names])}""")
-
-    region_select_names = [f'"{meta["flag"]} {meta["name"]}"' for code, meta in REGIONS.items()]
 
     clash_content = f"""# ==========================================
 # WARP-Nodes 8大国精选订阅 (Mihomo / Clash Meta)
@@ -312,21 +294,15 @@ proxy-groups:
     type: select
     proxies:
       - "🖐️ 手动选择"
-      - "🌐 地区手动选择"
       - "♻️ 自动选择"
       - "⚡ 地区自动选择"
       - "🎯 全球直连"
-{chr(10).join(['      - ' + name for name in region_select_names])}
+{chr(10).join(['      - ' + name for name in region_auto_names])}
 
   - name: "🖐️ 手动选择"
     type: select
     proxies:
 {chr(10).join(['      - ' + name for name in all_names])}
-
-  - name: "🌐 地区手动选择"
-    type: select
-    proxies:
-{chr(10).join(['      - ' + name for name in region_manual_names])}
 
   - name: "♻️ 自动选择"
     type: url-test

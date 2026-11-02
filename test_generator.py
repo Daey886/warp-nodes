@@ -56,7 +56,7 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertIn("💬 社交社区", yaml_content)
         self.assertIn("👨‍💻 开发者服务", yaml_content)
         self.assertIn("🖐️ 手动选择", yaml_content)
-        self.assertIn("🌐 地区手动选择", yaml_content)
+        self.assertNotIn("🌐 地区手动选择", yaml_content)
         self.assertIn("♻️ 自动选择", yaml_content)
         self.assertIn("⚡ 地区自动选择", yaml_content)
         self.assertIn("persistent-keepalive: 25", yaml_content)
@@ -69,7 +69,7 @@ class TestWarpGenerator(unittest.TestCase):
         group_names = [g['name'] for g in data['proxy-groups']]
         self.assertIn("🚀 节点选择", group_names)
         self.assertIn("🖐️ 手动选择", group_names)
-        self.assertIn("🌐 地区手动选择", group_names)
+        self.assertNotIn("🌐 地区手动选择", group_names)
         self.assertIn("♻️ 自动选择", group_names)
         self.assertIn("⚡ 地区自动选择", group_names)
         self.assertIn("🇺🇸 美国", group_names)
