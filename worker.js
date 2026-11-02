@@ -1,20 +1,22 @@
 /**
  * Cloudflare Worker - WARP-Nodes 边缘动态订阅分发引擎
- * Service Worker 格式 (兼容最强、极速冷启)
+ * 
+ * 功能特性：
+ * 1. 自动感知访客网络：根据 request.cf (ASN / 运营商 / 地理位置) 识别 电信 / 移动 / 联通 / 广电 / 海外
+ * 2. 毫秒级重组订阅：从后端最新的 meta.json 挑选对该运营商最优的端点，定制专属 Clash / Mihomo 配置
+ * 3. 极速响应：边缘缓存与自动容灾，链接永不变更
  */
 
+// 数据源指向 warp-nodes 仓库的最新元数据
 const META_URL = "https://raw.githubusercontent.com/Daey886/warp-nodes/main/dist/meta.json";
 const BACKUP_META_URL = "https://fastly.jsdelivr.net/gh/Daey886/warp-nodes@main/dist/meta.json";
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
-});
-
-async function handleRequest(request) {
-  try {
+export default {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const cf = request.cf || {};
 
+    // 1. 识别访客网络特征
     const asn = cf.asn || 0;
     const org = (cf.asOrganization || "").toLowerCase();
     const country = cf.country || "CN";
@@ -23,7 +25,10 @@ async function handleRequest(request) {
     let isp = "通用网络";
     let ispTag = "MIX";
     
-    // 识别运营商
+    // 匹配三大运营商 ASN
+    // 电信: 4134, 4809, 23724
+    // 联通: 4837, 9929, 10099
+    // 移动: 9808, 58453, 56040, 56041, 56042
     if ([4134, 4809, 23724].includes(asn) || org.includes("telecom") || org.includes("chinatelecom")) {
       isp = "中国电信";
       ispTag = "CT";
@@ -41,7 +46,7 @@ async function handleRequest(request) {
       ispTag = "OVERSEA";
     }
 
-    // 状态接口
+    // 2. 路由匹配
     if (url.pathname === "/" || url.pathname === "/status") {
       return new Response(JSON.stringify({
         status: "online",
@@ -50,14 +55,14 @@ async function handleRequest(request) {
         detected_isp: isp,
         isp_tag: ispTag,
         region: `${country} - ${city}`,
-        clash_subscription: `${url.origin}/clash`,
+        warp_subscription: `${url.origin}/clash`,
         notice: "请在 Clash / Mihomo 中订阅该链接，将根据网络自动下发最优端点"
       }, null, 2), {
         headers: { "content-type": "application/json; charset=utf-8" }
       });
     }
 
-    // 拉取最新的 meta.json
+    // 3. 拉取最新的 meta.json 数据（利用 CF 边缘缓存 10 分钟）
     let meta = null;
     try {
       let resp = await fetch(META_URL, { cf: { cacheTtl: 600, cacheEverything: true } });
@@ -73,30 +78,39 @@ async function handleRequest(request) {
       return new Response("Invalid metadata structure", { status: 500 });
     }
 
-    // 默认或指定 /clash 输出 Clash / Mihomo 配置
+    // 4. 针对不同客户端下发
+    if (url.pathname.endsWith("/clash") || url.pathname.endsWith(".yaml")) {
+      const clashYaml = renderClashConfig(meta, isp, ispTag, asn);
+      return new Response(clashYaml, {
+        headers: {
+          "content-type": "text/yaml; charset=utf-8",
+          "content-disposition": `attachment; filename="warp-${ispTag.toLowerCase()}.yaml"`,
+          "subscription-userinfo": "upload=0; download=0; total=2021623992320; expire=4102329600"
+        }
+      });
+    }
+
+    // 默认兜底返回 Clash
     const clashYaml = renderClashConfig(meta, isp, ispTag, asn);
     return new Response(clashYaml, {
-      headers: {
-        "content-type": "text/yaml; charset=utf-8",
-        "content-disposition": `attachment; filename="warp-${ispTag.toLowerCase()}.yaml"`,
-        "subscription-userinfo": "upload=0; download=0; total=2021623992320; expire=4102329600"
-      }
+      headers: { "content-type": "text/yaml; charset=utf-8" }
     });
-
-  } catch (err) {
-    return new Response("Worker Exception: " + err.stack, { status: 500 });
   }
-}
+};
 
+/**
+ * 动态组装专属 Clash 配置
+ */
 function renderClashConfig(meta, isp, ispTag, asn) {
   const account = meta.account;
   const regions = meta.regions;
   const nodes = meta.nodes;
 
+  // 节点渲染
   const proxiesList = [];
   const nodeNames = [];
 
-  // 网络探针标识
+  // 探针信息节点
   proxiesList.push(`  - name: "⚡ 网络识别: ${isp} (ASN${asn})"\n    type: wireguard\n    server: "${nodes[0].server}"\n    port: ${nodes[0].port}\n    ip: "${account.ip}"\n    ipv6: "${account.ipv6}"\n    private-key: "${account.private_key}"\n    public-key: "${account.public_key}"\n    reserved: [${account.reserved.join(', ')}]\n    mtu: 1280\n    persistent-keepalive: 25\n    remote-dns-resolve: true`);
 
   for (let n of nodes) {
@@ -105,6 +119,7 @@ function renderClashConfig(meta, isp, ispTag, asn) {
     nodeNames.push(`"${n.name}"`);
   }
 
+  // 9 大区域独立分组
   const regionAutoNames = [];
   const regionGroupBlocks = [];
 
@@ -241,7 +256,7 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
-  - GEOSITE,google-gemini,🤖 海外AI
+  - GEOSITE,gemini,🤖 海外AI
   - GEOSITE,youtube,🎬 国际流媒体
   - GEOSITE,netflix,🎬 国际流媒体
   - GEOSITE,spotify,🎬 国际流媒体
