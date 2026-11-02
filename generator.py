@@ -232,6 +232,7 @@ def generate_clash_yaml(nodes):
     public-key: "{n['public_key']}"
     reserved: {n['reserved']}
     mtu: {n['mtu']}
+    persistent-keepalive: 25
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
@@ -240,36 +241,24 @@ def generate_clash_yaml(nodes):
 
     all_names = [f'"{n["name"]}"' for n in nodes if n.get('region') != 'INFO']
     
-    # Group names per region
+    # 地区分组：每个地区独立分组，直接采用 url-test 自动优选（同地区内部4个节点，延迟一致，不跨区跳切）
     region_groups = []
+    region_auto_names = []
     for code, meta in REGIONS.items():
         reg_names = [f'"{n["name"]}"' for n in nodes if n.get('region') == code]
-        region_groups.append(f"""  - name: "{meta['flag']} {meta['name']}"
+        group_name = f"{meta['flag']} {meta['name']}"
+        region_auto_names.append(f'"{group_name}"')
+        
+        region_groups.append(f"""  - name: "{group_name}"
     type: url-test
     url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "{meta['flag']} {meta['name']} 自动优选"
-      - "{meta['flag']} {meta['name']} 手动选择"
-
-  - name: "{meta['flag']} {meta['name']} 自动优选"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-{chr(10).join(['      - ' + name for name in reg_names])}
-
-  - name: "{meta['flag']} {meta['name']} 手动选择"
-    type: select
+    interval: 600
+    tolerance: 80
     proxies:
 {chr(10).join(['      - ' + name for name in reg_names])}""")
 
-    region_select_names = [f'"{meta["flag"]} {meta["name"]}"' for code, meta in REGIONS.items()]
-
     clash_content = f"""# ==========================================
-# WARP-Nodes 8大国自动优选订阅 (Mihomo / Clash Meta)
+# WARP-Nodes 8大国精选订阅 (Mihomo / Clash Meta)
 # Generated: {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
 # ==========================================
 
@@ -304,17 +293,32 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "♻️ 自动优选"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+      - "⚡ 地区自动选择"
       - "🎯 全球直连"
-{chr(10).join(['      - ' + name for name in region_select_names])}
+{chr(10).join(['      - ' + name for name in region_auto_names])}
 
-  - name: "♻️ 自动优选"
-    type: url-test
-    url: http://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
+  - name: "🖐️ 手动选择"
+    type: select
     proxies:
 {chr(10).join(['      - ' + name for name in all_names])}
+
+  - name: "♻️ 自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+{chr(10).join(['      - ' + name for name in all_names])}
+
+  - name: "⚡ 地区自动选择"
+    type: url-test
+    url: http://cp.cloudflare.com/generate_204
+    interval: 600
+    tolerance: 100
+    proxies:
+{chr(10).join(['      - ' + name for name in region_auto_names])}
 
   - name: "🤖 海外AI"
     type: select
@@ -324,6 +328,41 @@ proxy-groups:
       - "🇸🇬 新加坡"
       - "🇬🇧 英国"
       - "🚀 节点选择"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "🎬 国际流媒体"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇸🇬 新加坡"
+      - "🇯🇵 日本"
+      - "🇺🇸 美国"
+      - "🇹🇼 台湾"
+      - "🇭🇰 香港"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "💬 社交社区"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇭🇰 香港"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🖐️ 手动选择"
+      - "♻️ 自动选择"
+
+  - name: "👨‍💻 开发者服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "🇺🇸 美国"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🎯 全球直连"
+      - "🖐️ 手动选择"
 
 {chr(10).join(region_groups)}
 
@@ -342,9 +381,17 @@ rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
+  - GEOSITE,gemini,🤖 海外AI
+  - GEOSITE,youtube,🎬 国际流媒体
+  - GEOSITE,netflix,🎬 国际流媒体
+  - GEOSITE,spotify,🎬 国际流媒体
+  - GEOSITE,telegram,💬 社交社区
+  - GEOSITE,twitter,💬 社交社区
+  - GEOSITE,discord,💬 社交社区
+  - GEOSITE,reddit,💬 社交社区
+  - GEOSITE,github,👨‍💻 开发者服务
+  - GEOSITE,gitlab,👨‍💻 开发者服务
   - GEOSITE,google,🚀 节点选择
-  - GEOSITE,github,🚀 节点选择
-  - GEOSITE,telegram,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOIP,CN,🎯 全球直连
   - MATCH,🚀 节点选择
@@ -366,6 +413,7 @@ def generate_clash_providers(nodes):
     public-key: "{n['public_key']}"
     reserved: {n['reserved']}
     mtu: {n['mtu']}
+    persistent-keepalive: 25
     remote-dns-resolve: true
     dns:
       - 1.1.1.1
@@ -503,6 +551,35 @@ def main():
         )
     with open('dist/nodes.txt', 'w', encoding='utf-8') as f:
         f.write("\n".join(raw_uris))
+
+    # Meta JSON for Cloudflare Worker & dynamic routing
+    quota_desc = "WARP+ 无限 (1.84 PB)" if account.get('warp_plus') else "WARP 免费版"
+    metadata = {
+        'updated_at': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
+        'account': {
+            'warp_plus': account.get('warp_plus'),
+            'quota': quota_desc,
+            'ip': account.get('v4'),
+            'ipv6': account.get('v6'),
+            'private_key': account.get('private_key'),
+            'public_key': account.get('public_key'),
+            'reserved': account.get('reserved')
+        },
+        'regions': REGIONS,
+        'nodes': [
+            {
+                'name': n['name'],
+                'region': n.get('region'),
+                'server': n['server'],
+                'port': n['port'],
+                'loss': n.get('loss', 0.0),
+                'delay': n.get('delay', 0)
+            }
+            for n in nodes if n.get('region') != 'INFO'
+        ]
+    }
+    with open('dist/meta.json', 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, indent=2, ensure_ascii=False)
 
     print("Successfully built all outputs in dist/ directory!")
 

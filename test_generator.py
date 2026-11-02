@@ -52,7 +52,14 @@ class TestWarpGenerator(unittest.TestCase):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
         yaml_content = generate_clash_yaml(nodes)
         self.assertIn("🤖 海外AI", yaml_content)
-        self.assertIn("♻️ 自动优选", yaml_content)
+        self.assertIn("🎬 国际流媒体", yaml_content)
+        self.assertIn("💬 社交社区", yaml_content)
+        self.assertIn("👨‍💻 开发者服务", yaml_content)
+        self.assertIn("🖐️ 手动选择", yaml_content)
+        self.assertNotIn("🌐 地区手动选择", yaml_content)
+        self.assertIn("♻️ 自动选择", yaml_content)
+        self.assertIn("⚡ 地区自动选择", yaml_content)
+        self.assertIn("persistent-keepalive: 25", yaml_content)
         self.assertIn("proxies:", yaml_content)
         self.assertIn("proxy-groups:", yaml_content)
         
@@ -61,6 +68,10 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertEqual(len(data['proxies']), 37)
         group_names = [g['name'] for g in data['proxy-groups']]
         self.assertIn("🚀 节点选择", group_names)
+        self.assertIn("🖐️ 手动选择", group_names)
+        self.assertNotIn("🌐 地区手动选择", group_names)
+        self.assertIn("♻️ 自动选择", group_names)
+        self.assertIn("⚡ 地区自动选择", group_names)
         self.assertIn("🇺🇸 美国", group_names)
         self.assertIn("🇭🇰 香港", group_names)
         self.assertIn("🇹🇼 台湾", group_names)
@@ -90,6 +101,12 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertIn("interface-ip=172.16.0.2", loon_text)
         self.assertIn("reserved=[54,177,14]", loon_text)
         self.assertIn("wireguard,", loon_text)
+
+    def test_meta_json_structure(self):
+        with open('dist/meta.json') as f:
+            data = json.load(f)
+        self.assertEqual(data['account']['ip'], '172.16.0.2')
+        self.assertTrue(len(data['nodes']) >= 36)
 
 
 if __name__ == '__main__':
