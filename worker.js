@@ -128,7 +128,7 @@ function renderClashConfig(meta, isp, ispTag, asn) {
     const groupName = `${metaReg.flag} ${metaReg.name}`;
     regionAutoNames.push(`"${groupName}"`);
 
-    regionGroupBlocks.push(`  - name: "${groupName}"\n    type: url-test\n    url: http://cp.cloudflare.com/generate_204\n    interval: 600\n    tolerance: 80\n    proxies:\n${regNodes.join('\n')}`);
+    regionGroupBlocks.push(`  - name: "${groupName}"\n    hidden: true\n    type: url-test\n    url: http://cp.cloudflare.com/generate_204\n    interval: 600\n    tolerance: 80\n    proxies:\n${regNodes.join('\n')}`);
   }
 
   return `# ==========================================
@@ -172,7 +172,6 @@ proxy-groups:
       - "♻️ 自动选择"
       - "⚡ 地区自动选择"
       - "🎯 全球直连"
-${regionAutoNames.map(name => `      - ${name}`).join('\n')}
 
   - name: "🖐️ 手动选择"
     type: select
@@ -206,39 +205,6 @@ ${regionAutoNames.map(name => `      - ${name}`).join('\n')}
       - "🖐️ 手动选择"
       - "♻️ 自动选择"
 
-  - name: "🎬 国际流媒体"
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🇸🇬 新加坡"
-      - "🇯🇵 日本"
-      - "🇺🇸 美国"
-      - "🇹🇼 台湾"
-      - "🇭🇰 香港"
-      - "🖐️ 手动选择"
-      - "♻️ 自动选择"
-
-  - name: "💬 社交社区"
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🇭🇰 香港"
-      - "🇯🇵 日本"
-      - "🇸🇬 新加坡"
-      - "🇺🇸 美国"
-      - "🖐️ 手动选择"
-      - "♻️ 自动选择"
-
-  - name: "👨‍💻 开发者服务"
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🇺🇸 美国"
-      - "🇯🇵 日本"
-      - "🇸🇬 新加坡"
-      - "🎯 全球直连"
-      - "🖐️ 手动选择"
-
 ${regionGroupBlocks.join('\n\n')}
 
   - name: "🎯 全球直连"
@@ -257,15 +223,7 @@ rules:
   - GEOSITE,openai,🤖 海外AI
   - GEOSITE,anthropic,🤖 海外AI
   - GEOSITE,gemini,🤖 海外AI
-  - GEOSITE,youtube,🎬 国际流媒体
-  - GEOSITE,netflix,🎬 国际流媒体
-  - GEOSITE,spotify,🎬 国际流媒体
-  - GEOSITE,telegram,💬 社交社区
-  - GEOSITE,twitter,💬 社交社区
-  - GEOSITE,discord,💬 社交社区
-  - GEOSITE,reddit,💬 社交社区
-  - GEOSITE,github,👨‍💻 开发者服务
-  - GEOSITE,gitlab,👨‍💻 开发者服务
+  - GEOSITE,bing,🎯 全球直连
   - GEOSITE,google,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOIP,CN,🎯 全球直连
