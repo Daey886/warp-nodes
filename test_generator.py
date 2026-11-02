@@ -52,9 +52,11 @@ class TestWarpGenerator(unittest.TestCase):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
         yaml_content = generate_clash_yaml(nodes)
         self.assertIn("🤖 海外AI", yaml_content)
-        self.assertIn("🎬 国际流媒体", yaml_content)
-        self.assertIn("💬 社交社区", yaml_content)
-        self.assertIn("👨‍💻 开发者服务", yaml_content)
+        self.assertNotIn("🎬 国际流媒体", yaml_content)
+        self.assertNotIn("💬 社交社区", yaml_content)
+        self.assertNotIn("👨‍💻 开发者服务", yaml_content)
+        self.assertIn("🎯 全球直连", yaml_content)
+        self.assertIn("hidden: true", yaml_content)
         self.assertIn("🖐️ 手动选择", yaml_content)
         self.assertNotIn("🌐 地区手动选择", yaml_content)
         self.assertIn("♻️ 自动选择", yaml_content)
@@ -72,9 +74,15 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertNotIn("🌐 地区手动选择", group_names)
         self.assertIn("♻️ 自动选择", group_names)
         self.assertIn("⚡ 地区自动选择", group_names)
-        self.assertIn("🇺🇸 美国", group_names)
-        self.assertIn("🇭🇰 香港", group_names)
-        self.assertIn("🇹🇼 台湾", group_names)
+        self.assertIn("🤖 海外AI", group_names)
+        self.assertIn("🛑 广告拦截", group_names)
+        self.assertIn("🎯 全球直连", group_names)
+        hidden_groups = [g['name'] for g in data['proxy-groups'] if g.get('hidden') is True]
+        self.assertEqual(set(hidden_groups), {
+            "🇭🇰 香港", "🇹🇼 台湾", "🇯🇵 日本", "🇸🇬 新加坡", "🇺🇸 美国",
+            "🇬🇧 英国", "🇩🇪 德国", "🇰🇷 韩国", "🇨🇦 加拿大",
+        })
+        self.assertEqual(group_names.count("🎯 全球直连"), 1)
 
     def test_singbox_json(self):
         nodes = build_node_pool(self.mock_account, self.mock_probe_list)
