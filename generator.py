@@ -536,7 +536,7 @@ def main():
     with open('dist/nodes.txt', 'w', encoding='utf-8') as f:
         f.write("\n".join(raw_uris))
 
-    # Meta JSON for Cloudflare Worker & dynamic routing
+    # Meta JSON metadata
     quota_desc = "WARP+ 无限 (1.84 PB)" if account.get('warp_plus') else "WARP 免费版"
     metadata = {
         'updated_at': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC'),
