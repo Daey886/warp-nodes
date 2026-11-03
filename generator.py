@@ -40,6 +40,7 @@ PROBE_SOURCES = [
 
 # WARP+ License Key pool for upgrading accounts to Argo routing
 WARP_PLUS_KEYS = [
+    'q04IC2g5-9Kn15C4F-E9r25A1O',
     '2Py43N6C-X324m7ig-InM5o209',
     'C9U6O74Y-LMfV0148-4l0a12rR',
     'OQ6931DM-3E2q8f6u-0F418RfA',

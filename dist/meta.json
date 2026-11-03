@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-02 02:15:28 UTC",
+  "updated_at": "2026-11-03 15:14:03 UTC",
   "account": {
-    "warp_plus": null,
-    "quota": "WARP 免费版",
+    "warp_plus": true,
+    "quota": "WARP+ 无限 (1.84 PB)",
     "ip": "172.16.0.2",
-    "ipv6": "2606:4700:110:8952:8ca6:26ec:1171:8f53",
-    "private_key": "wG8dYNbYgyfNKHIrFTYoHerZnU6omGt642Ejru5ZXm8=",
+    "ipv6": "2606:4700:110:84fe:a3e1:9fd6:8857:b530",
+    "private_key": "wHtPUhLPWGhVVFVbYB3QrXe499WjhB06QHa4EgoAs10=",
     "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
     "reserved": [
-      54,
-      177,
-      14
+      155,
+      244,
+      222
     ]
   },
   "regions": {
@@ -89,7 +89,7 @@
   },
   "nodes": [
     {
-      "name": "🇭🇰 香港 01 | WARP",
+      "name": "🇭🇰 香港 01 | WARP+",
       "region": "HK",
       "server": "162.159.192.19",
       "port": 987,
@@ -97,7 +97,7 @@
       "delay": 0
     },
     {
-      "name": "🇭🇰 香港 02 | WARP",
+      "name": "🇭🇰 香港 02 | WARP+",
       "region": "HK",
       "server": "162.159.195.165",
       "port": 987,
@@ -105,7 +105,7 @@
       "delay": 0
     },
     {
-      "name": "🇭🇰 香港 03 | WARP",
+      "name": "🇭🇰 香港 03 | WARP+",
       "region": "HK",
       "server": "162.159.192.19",
       "port": 878,
@@ -113,7 +113,7 @@
       "delay": 0
     },
     {
-      "name": "🇭🇰 香港 04 | WARP",
+      "name": "🇭🇰 香港 04 | WARP+",
       "region": "HK",
       "server": "[2606:4700:d0::a29f:c013]",
       "port": 987,
@@ -121,7 +121,7 @@
       "delay": 0
     },
     {
-      "name": "🇹🇼 台湾 01 | WARP",
+      "name": "🇹🇼 台湾 01 | WARP+",
       "region": "TW",
       "server": "162.159.192.83",
       "port": 987,
@@ -129,7 +129,7 @@
       "delay": 0
     },
     {
-      "name": "🇹🇼 台湾 02 | WARP",
+      "name": "🇹🇼 台湾 02 | WARP+",
       "region": "TW",
       "server": "162.159.195.83",
       "port": 878,
@@ -137,7 +137,7 @@
       "delay": 0
     },
     {
-      "name": "🇹🇼 台湾 03 | WARP",
+      "name": "🇹🇼 台湾 03 | WARP+",
       "region": "TW",
       "server": "162.159.192.83",
       "port": 854,
@@ -145,7 +145,7 @@
       "delay": 0
     },
     {
-      "name": "🇹🇼 台湾 04 | WARP",
+      "name": "🇹🇼 台湾 04 | WARP+",
       "region": "TW",
       "server": "[2606:4700:d0::a29f:c053]",
       "port": 987,
@@ -153,7 +153,7 @@
       "delay": 0
     },
     {
-      "name": "🇯🇵 日本 01 | WARP",
+      "name": "🇯🇵 日本 01 | WARP+",
       "region": "JP",
       "server": "162.159.192.163",
       "port": 878,
@@ -161,7 +161,7 @@
       "delay": 0
     },
     {
-      "name": "🇯🇵 日本 02 | WARP",
+      "name": "🇯🇵 日本 02 | WARP+",
       "region": "JP",
       "server": "162.159.195.179",
       "port": 987,
@@ -169,7 +169,7 @@
       "delay": 0
     },
     {
-      "name": "🇯🇵 日本 03 | WARP",
+      "name": "🇯🇵 日本 03 | WARP+",
       "region": "JP",
       "server": "162.159.192.163",
       "port": 987,
@@ -177,7 +177,7 @@
       "delay": 0
     },
     {
-      "name": "🇯🇵 日本 04 | WARP",
+      "name": "🇯🇵 日本 04 | WARP+",
       "region": "JP",
       "server": "[2606:4700:d0::a29f:c0a3]",
       "port": 878,
@@ -185,7 +185,7 @@
       "delay": 0
     },
     {
-      "name": "🇸🇬 新加坡 01 | WARP",
+      "name": "🇸🇬 新加坡 01 | WARP+",
       "region": "SG",
       "server": "162.159.192.44",
       "port": 987,
@@ -193,7 +193,7 @@
       "delay": 0
     },
     {
-      "name": "🇸🇬 新加坡 02 | WARP",
+      "name": "🇸🇬 新加坡 02 | WARP+",
       "region": "SG",
       "server": "162.159.195.208",
       "port": 878,
@@ -201,7 +201,7 @@
       "delay": 0
     },
     {
-      "name": "🇸🇬 新加坡 03 | WARP",
+      "name": "🇸🇬 新加坡 03 | WARP+",
       "region": "SG",
       "server": "162.159.192.44",
       "port": 854,
@@ -209,7 +209,7 @@
       "delay": 0
     },
     {
-      "name": "🇸🇬 新加坡 04 | WARP",
+      "name": "🇸🇬 新加坡 04 | WARP+",
       "region": "SG",
       "server": "[2606:4700:d0::a29f:c02c]",
       "port": 987,
@@ -217,7 +217,7 @@
       "delay": 0
     },
     {
-      "name": "🇺🇸 美国 01 | WARP",
+      "name": "🇺🇸 美国 01 | WARP+",
       "region": "US",
       "server": "162.159.192.5",
       "port": 2408,
@@ -225,7 +225,7 @@
       "delay": 0
     },
     {
-      "name": "🇺🇸 美国 02 | WARP",
+      "name": "🇺🇸 美国 02 | WARP+",
       "region": "US",
       "server": "162.159.193.10",
       "port": 2408,
@@ -233,7 +233,7 @@
       "delay": 0
     },
     {
-      "name": "🇺🇸 美国 03 | WARP",
+      "name": "🇺🇸 美国 03 | WARP+",
       "region": "US",
       "server": "162.159.192.5",
       "port": 987,
@@ -241,7 +241,7 @@
       "delay": 0
     },
     {
-      "name": "🇺🇸 美国 04 | WARP",
+      "name": "🇺🇸 美国 04 | WARP+",
       "region": "US",
       "server": "[2606:4700:d0::a29f:c005]",
       "port": 2408,
@@ -249,7 +249,7 @@
       "delay": 0
     },
     {
-      "name": "🇬🇧 英国 01 | WARP",
+      "name": "🇬🇧 英国 01 | WARP+",
       "region": "GB",
       "server": "162.159.192.36",
       "port": 2408,
@@ -257,7 +257,7 @@
       "delay": 0
     },
     {
-      "name": "🇬🇧 英国 02 | WARP",
+      "name": "🇬🇧 英国 02 | WARP+",
       "region": "GB",
       "server": "162.159.195.246",
       "port": 987,
@@ -265,7 +265,7 @@
       "delay": 0
     },
     {
-      "name": "🇬🇧 英国 03 | WARP",
+      "name": "🇬🇧 英国 03 | WARP+",
       "region": "GB",
       "server": "162.159.192.36",
       "port": 878,
@@ -273,7 +273,7 @@
       "delay": 0
     },
     {
-      "name": "🇬🇧 英国 04 | WARP",
+      "name": "🇬🇧 英国 04 | WARP+",
       "region": "GB",
       "server": "[2606:4700:d0::a29f:c024]",
       "port": 2408,
@@ -281,7 +281,7 @@
       "delay": 0
     },
     {
-      "name": "🇩🇪 德国 01 | WARP",
+      "name": "🇩🇪 德国 01 | WARP+",
       "region": "DE",
       "server": "162.159.192.82",
       "port": 2408,
@@ -289,7 +289,7 @@
       "delay": 0
     },
     {
-      "name": "🇩🇪 德国 02 | WARP",
+      "name": "🇩🇪 德国 02 | WARP+",
       "region": "DE",
       "server": "162.159.195.189",
       "port": 878,
@@ -297,7 +297,7 @@
       "delay": 0
     },
     {
-      "name": "🇩🇪 德国 03 | WARP",
+      "name": "🇩🇪 德国 03 | WARP+",
       "region": "DE",
       "server": "162.159.192.82",
       "port": 987,
@@ -305,7 +305,7 @@
       "delay": 0
     },
     {
-      "name": "🇩🇪 德国 04 | WARP",
+      "name": "🇩🇪 德国 04 | WARP+",
       "region": "DE",
       "server": "[2606:4700:d0::a29f:c052]",
       "port": 2408,
@@ -313,7 +313,7 @@
       "delay": 0
     },
     {
-      "name": "🇰🇷 韩国 01 | WARP",
+      "name": "🇰🇷 韩国 01 | WARP+",
       "region": "KR",
       "server": "162.159.192.53",
       "port": 987,
@@ -321,7 +321,7 @@
       "delay": 0
     },
     {
-      "name": "🇰🇷 韩国 02 | WARP",
+      "name": "🇰🇷 韩国 02 | WARP+",
       "region": "KR",
       "server": "162.159.193.1",
       "port": 2408,
@@ -329,7 +329,7 @@
       "delay": 0
     },
     {
-      "name": "🇰🇷 韩国 03 | WARP",
+      "name": "🇰🇷 韩国 03 | WARP+",
       "region": "KR",
       "server": "162.159.192.53",
       "port": 854,
@@ -337,7 +337,7 @@
       "delay": 0
     },
     {
-      "name": "🇰🇷 韩国 04 | WARP",
+      "name": "🇰🇷 韩国 04 | WARP+",
       "region": "KR",
       "server": "[2606:4700:d0::a29f:c035]",
       "port": 987,
@@ -345,7 +345,7 @@
       "delay": 0
     },
     {
-      "name": "🇨🇦 加拿大 01 | WARP",
+      "name": "🇨🇦 加拿大 01 | WARP+",
       "region": "CA",
       "server": "162.159.192.220",
       "port": 2408,
@@ -353,7 +353,7 @@
       "delay": 0
     },
     {
-      "name": "🇨🇦 加拿大 02 | WARP",
+      "name": "🇨🇦 加拿大 02 | WARP+",
       "region": "CA",
       "server": "162.159.195.1",
       "port": 987,
@@ -361,7 +361,7 @@
       "delay": 0
     },
     {
-      "name": "🇨🇦 加拿大 03 | WARP",
+      "name": "🇨🇦 加拿大 03 | WARP+",
       "region": "CA",
       "server": "162.159.192.220",
       "port": 878,
@@ -369,7 +369,7 @@
       "delay": 0
     },
     {
-      "name": "🇨🇦 加拿大 04 | WARP",
+      "name": "🇨🇦 加拿大 04 | WARP+",
       "region": "CA",
       "server": "[2606:4700:d0::a29f:c0dc]",
       "port": 2408,
