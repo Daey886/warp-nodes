@@ -49,8 +49,63 @@ WARP_PLUS_KEYS = [
     'QW6L87l1-2r10Q6Fj-rex5g416'
 ]
 
+# Path to local persistent device profile
+DEVICE_PROFILE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'warp_device.json')
+
+def load_cached_device():
+    """Load cached device profile from environment or local JSON file."""
+    env_str = os.environ.get('WARP_DEVICE_JSON')
+    if env_str:
+        try:
+            return json.loads(env_str)
+        except Exception:
+            pass
+    if os.path.exists(DEVICE_PROFILE_FILE):
+        try:
+            with open(DEVICE_PROFILE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return None
+
+def save_device_profile(profile):
+    """Persist device profile locally to avoid repeated registrations."""
+    try:
+        with open(DEVICE_PROFILE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(profile, f, indent=2, ensure_ascii=False)
+        print(f"Device profile saved to {DEVICE_PROFILE_FILE}")
+    except Exception as e:
+        print(f"Warning: Failed to save device profile: {e}")
+
 def generate_warp_account():
-    """Register a Cloudflare WARP account and upgrade to WARP+."""
+    """Get or register a Cloudflare WARP account and upgrade to WARP+."""
+    cached = load_cached_device()
+    if cached and cached.get('account_id') and cached.get('token') and cached.get('private_key'):
+        aid = cached['account_id']
+        token = cached['token']
+        try:
+            url = f'https://api.cloudflareclient.com/v0a2158/reg/{aid}'
+            req = urllib.request.Request(url, headers={
+                'User-Agent': 'okhttp/3.12.1',
+                'Authorization': f'Bearer {token}'
+            })
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read().decode())
+                if data.get('id') == aid:
+                    acc_info = data.get('account', {})
+                    is_warp_plus = acc_info.get('warp_plus', False) or cached.get('warp_plus', False)
+                    print(f"Reusing existing fixed device {aid[:8]}... (WARP+: {is_warp_plus})")
+                    return {
+                        'private_key': cached['private_key'],
+                        'public_key': cached.get('public_key', 'bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo='),
+                        'v4': cached.get('v4', '172.16.0.2'),
+                        'v6': cached.get('v6', '2606:4700:110::1'),
+                        'reserved': cached.get('reserved', [0, 0, 0]),
+                        'warp_plus': is_warp_plus
+                    }
+        except Exception as e:
+            print(f"Notice: Cached device verification failed ({e}), registering fresh device...")
+
     priv = x25519.X25519PrivateKey.generate()
     pub = priv.public_key()
     priv_b64 = base64.b64encode(priv.private_bytes(
@@ -115,7 +170,9 @@ def generate_warp_account():
                 except Exception as ex:
                     continue
             
-            return {
+            profile = {
+                'account_id': aid,
+                'token': token,
                 'private_key': priv_b64,
                 'public_key': peer_pub,
                 'v4': v4,
@@ -123,6 +180,8 @@ def generate_warp_account():
                 'reserved': reserved,
                 'warp_plus': is_warp_plus
             }
+            save_device_profile(profile)
+            return profile
     except Exception as e:
         print(f"Warning: Failed to register account via CF API: {e}. Using fallback defaults.")
         return {

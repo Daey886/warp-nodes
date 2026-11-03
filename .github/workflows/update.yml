@@ -29,6 +29,8 @@ jobs:
           python3 -m unittest test_generator.py
 
       - name: Generate Subscriptions
+        env:
+          WARP_DEVICE_JSON: ${{ secrets.WARP_DEVICE_JSON }}
         run: |
           python3 generator.py
 
