@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-03 00:05:14 UTC",
+  "updated_at": "2026-11-03 13:04:27 UTC",
   "account": {
     "warp_plus": false,
     "quota": "WARP 免费版",
     "ip": "172.16.0.2",
-    "ipv6": "2606:4700:110:8ce8:996f:d619:f02c:bab4",
-    "private_key": "MMu6UG6X3Kb8Elex8u11lC6xus89N16F1X7Ly6o0Omc=",
+    "ipv6": "2606:4700:110:8b94:a871:d6ab:eb1e:7534",
+    "private_key": "8PwhHF0BLqe+7260b5GXHFfgGt9GBB4fk8uy3l0vDVM=",
     "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
     "reserved": [
-      155,
-      210,
-      132
+      3,
+      84,
+      52
     ]
   },
   "regions": {
