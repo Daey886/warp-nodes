@@ -113,6 +113,14 @@ class TestWarpGenerator(unittest.TestCase):
         self.assertEqual(data['account']['ip'], '172.16.0.2')
         self.assertTrue(len(data['nodes']) >= 36)
 
+    def test_cached_device_loading(self):
+        from generator import load_cached_device
+        os.environ['WARP_DEVICE_JSON'] = '{"account_id": "test_id", "token": "test_tok", "private_key": "test_priv"}'
+        dev = load_cached_device()
+        self.assertEqual(dev['account_id'], 'test_id')
+        del os.environ['WARP_DEVICE_JSON']
+
 
 if __name__ == '__main__':
     unittest.main()
+
