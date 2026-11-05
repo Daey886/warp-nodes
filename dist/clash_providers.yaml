@@ -1,5 +1,5 @@
 # WARP-Nodes Proxy Provider (Mihomo / Clash Meta)
-# Generated: 2026-11-05 03:49:38 UTC
+# Generated: 2026-11-05 13:32:50 UTC
 proxies:
   - name: "📊 剩余流量 | WARP+ 无限 (1.84 PB)"
     type: wireguard
