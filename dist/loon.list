@@ -1,6 +1,6 @@
 # ==========================================
 # WARP-Nodes Loon 订阅 (标准 Proxy 格式)
-# Generated: 2026-11-09 03:06:55 UTC
+# Generated: 2026-11-09 14:26:45 UTC
 # ==========================================
 [Proxy]
 📊 剩余流量 | WARP+ 无限 (1.84 PB) = wireguard,interface-ip=172.16.0.2,interface-ipV6=2606:4700:110:8825:64b0:3d4:5876:792e,private-key="6CSr5quzOk+tfHj8azg0vhqFDUnfA6ycVGvP+9g71lI=",mtu=1280,dns=1.1.1.1,dnsV6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",reserved=[87,92,186],allowed-ips="0.0.0.0/0, ::/0",endpoint=127.0.0.1:65535}],udp=true
